@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Kaisei_Decol, Noto_Sans_JP, Outfit, Pacifico } from "next/font/google";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -28,9 +29,11 @@ const kaiseiDecol = Kaisei_Decol({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "HOKU Design | 臨床の視点で作るアプリ",
   description:
     "HOKU Design は、元看護師の代表と理学療法士の開発者が二人で運営するアプリスタジオです。医療・ライフスタイル・ゲームのアプリを公開しています。",
+  openGraph: { siteName: SITE_NAME, locale: "ja_JP", type: "website" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

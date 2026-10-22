@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import {
   apps,
@@ -8,6 +9,7 @@ import {
   type AppInfo,
 } from "@/lib/apps";
 import { AppIcon } from "./AppIcon";
+import { CATEGORY_BADGE } from "./category-badge";
 
 type Filter = "all" | AppCategory;
 
@@ -18,14 +20,6 @@ const FILTERS: { value: Filter; label: string }[] = [
     label: CATEGORY_LABELS[value],
   })),
 ];
-
-const CATEGORY_BADGE: Record<AppCategory, string> = {
-  medical:
-    "bg-ocean/10 text-ocean dark:bg-ocean/20 dark:text-sky-300",
-  lifestyle:
-    "bg-sunset/15 text-orange-700 dark:bg-sunset/20 dark:text-sunset",
-  game: "bg-tropic/15 text-green-700 dark:bg-tropic/20 dark:text-green-300",
-};
 
 export function AppList() {
   const [filter, setFilter] = useState<Filter>("all");
@@ -124,29 +118,46 @@ function AppCard({ app }: { app: AppInfo }) {
         )}
       </div>
 
-      <div className="mt-5 border-t border-slate-100 pt-4 dark:border-night-700">
+      <div className="mt-5 flex items-start justify-between gap-4 border-t border-slate-100 pt-4 dark:border-night-700">
+        <Link
+          href={`/apps/${app.slug}`}
+          className="text-sm font-medium text-slate-500 underline-offset-4 transition-colors hover:text-ocean hover:underline dark:text-slate-400 dark:hover:text-turquoise"
+        >
+          詳しく見る
+        </Link>
         {inReview || !app.storeUrl ? (
           <span className="inline-flex items-center gap-2 text-sm font-medium text-sunset">
             <span className="size-2 animate-pulse rounded-full bg-sunset" />
             審査中 — 近日公開
           </span>
         ) : (
-          <a
-            href={app.storeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean transition-colors hover:text-turquoise dark:text-turquoise dark:hover:text-sky-300"
-          >
-            App Store で見る
-            <span
-              aria-hidden
-              className="transition-transform group-hover:translate-x-0.5"
-            >
-              →
-            </span>
-          </a>
+          <div className="flex flex-col items-end gap-1.5">
+            <StoreLink href={app.storeUrl} label="App Store で見る" />
+            {app.playStoreUrl && (
+              <StoreLink href={app.playStoreUrl} label="Google Play で見る" />
+            )}
+          </div>
         )}
       </div>
     </article>
+  );
+}
+
+function StoreLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean transition-colors hover:text-turquoise dark:text-turquoise dark:hover:text-sky-300"
+    >
+      {label}
+      <span
+        aria-hidden
+        className="transition-transform group-hover:translate-x-0.5"
+      >
+        →
+      </span>
+    </a>
   );
 }

@@ -1,16 +1,16 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { apps, CATEGORY_LABELS } from "@/lib/apps";
 import { AppIcon } from "./components/AppIcon";
 import { AppList } from "./components/AppList";
 import { CeoMessage } from "./components/CeoMessage";
 import { Hibiscus, PalmFrond, Waves } from "./components/Decorations";
+import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
 
-const NAV_LINKS = [
-  { href: "#apps", label: "アプリ" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
-];
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const STATS = [
   { value: `${apps.length}`, unit: "本", label: "公開アプリ" },
@@ -52,7 +52,7 @@ const STRENGTHS = [
 export default function Home() {
   return (
     <div className="relative flex flex-1 flex-col overflow-x-clip">
-      <Navbar />
+      <SiteHeader />
       <main className="flex-1">
         <Hero />
         <StatsBar />
@@ -60,45 +60,8 @@ export default function Home() {
         <About />
         <Contact />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
-  );
-}
-
-function Navbar() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-white/40 bg-white/85 backdrop-blur-lg dark:border-night-700/60 dark:bg-night-950/85">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-        <a href="#" className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-          <Image
-            src="/logo.png"
-            alt="HOKU Design ロゴ"
-            width={44}
-            height={44}
-            preload
-            className="h-11 w-11 shrink-0"
-          />
-          <span className="font-display text-base font-bold tracking-tight whitespace-nowrap sm:text-lg">
-            <span className="text-ocean dark:text-turquoise">HOKU</span>{" "}
-            <span className="font-medium text-slate-600 dark:text-slate-300">
-              Design
-            </span>
-          </span>
-        </a>
-        <ul className="flex items-center text-[13px] font-medium sm:gap-2 sm:text-sm">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="rounded-full px-1.5 py-1.5 whitespace-nowrap text-slate-600 transition-colors hover:bg-turquoise/10 hover:text-ocean sm:px-4 dark:text-slate-300 dark:hover:text-turquoise"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
   );
 }
 
@@ -416,43 +379,5 @@ function Contact() {
         </a>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="relative px-4 py-10 sm:px-6">
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-0.5 bg-linear-to-r from-turquoise via-ocean to-sunset opacity-70"
-      />
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
-        <div className="flex items-center gap-2">
-          <Image
-            src="/logo.png"
-            alt=""
-            width={32}
-            height={32}
-            className="size-8"
-          />
-          <span className="font-display font-semibold">HOKU Design</span>
-        </div>
-        <ul className="flex gap-5 text-sm text-slate-500 dark:text-slate-400">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="transition-colors hover:text-ocean dark:hover:text-turquoise"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p className="font-display text-xs text-slate-400">
-          © 2024 HOKU Design
-        </p>
-      </div>
-    </footer>
   );
 }

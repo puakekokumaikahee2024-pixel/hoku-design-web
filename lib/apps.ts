@@ -7,6 +7,8 @@ export type AppStatus = "released" | "in-review";
 export type AppInfo = {
   /** 一意なID（key・アンカー用） */
   id: string;
+  /** 個別ページのURL（/apps/[slug]） */
+  slug: string;
   name: string;
   /** 名前の後ろに付く短い説明（例: 統計解析） */
   tagline?: string;
@@ -16,8 +18,10 @@ export type AppInfo = {
   /** 審査中などでまだ無い場合は省略 */
   version?: string;
   status: AppStatus;
-  /** App Store / Google Play のURL（審査中などで未定なら省略） */
+  /** App Store のURL（審査中などで未定なら省略） */
   storeUrl?: string;
+  /** Google Play のURL（Android 版を公開しているものだけ） */
+  playStoreUrl?: string;
   /** アイコン画像（public/ からのパス。正方形） */
   iconSrc: string;
 };
@@ -31,6 +35,7 @@ export const CATEGORY_LABELS: Record<AppCategory, string> = {
 export const apps: AppInfo[] = [
   {
     id: "rehastats",
+    slug: "rehastats",
     name: "RehaStats",
     tagline: "統計解析",
     description:
@@ -44,42 +49,49 @@ export const apps: AppInfo[] = [
   },
   {
     id: "6mwt-guide",
+    slug: "6mwt-guide",
     name: "6MWT Guide",
     description:
-      "6分間歩行試験（6MWT）の実施をサポートするガイドアプリ。手順の確認から測定までをスムーズに。",
+      "6分間歩行試験（6MWT）の計測・評価アプリ。予測値の自動計算、VO2・METs換算、800項目以上の活動データベースを収録。",
     category: "medical",
-    platforms: ["iOS"],
+    platforms: ["iOS", "Android"],
     version: "1.2.0",
     status: "released",
     storeUrl: "https://apps.apple.com/jp/app/6mwt-guide/id6766694418",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.hiroshiadachi.sixmwtguide",
     iconSrc: "/icons/6mwt-guide.png",
   },
   {
     id: "6min-walking",
+    slug: "6mw-record",
     name: "6分間ウォーキング記録",
     description:
-      "6分間のウォーキングを手軽に記録。日々の歩行距離の変化を振り返れます。",
+      "6分間歩行の結果から、予測歩行距離と運動強度（VO2・METs・RPP）を計算。オフラインでも使えます。",
     category: "medical",
-    platforms: ["iOS"],
+    platforms: ["iOS", "Android"],
     version: "1.6.2",
     status: "released",
     storeUrl: "https://apps.apple.com/jp/app/6%E5%88%86%E9%96%93%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E8%A8%98%E9%8C%B2-6mw-%E8%A8%98%E9%8C%B2-%E5%88%86%E6%9E%90/id6761879946",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.hiroshiadachi.sixminutewalk",
     iconSrc: "/icons/6mw-record.jpg",
   },
   {
     id: "clinstats",
+    slug: "clinstats",
     name: "Clinstats",
     description:
       "臨床研究のための統計ツール。現場で集めたデータを、その場で分析できます。",
     category: "medical",
-    platforms: ["iOS", "macOS"],
+    platforms: ["iOS", "macOS", "Android"],
     version: "2.0.0",
     status: "released",
     storeUrl: "https://apps.apple.com/jp/app/clinstats/id6764431688",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.hokudesign.clinstats",
     iconSrc: "/icons/clinstats.jpg",
   },
   {
     id: "pinline",
+    slug: "pinline",
     name: "Pinline",
     tagline: "旅行スケジュール",
     description:
@@ -93,10 +105,11 @@ export const apps: AppInfo[] = [
   },
   {
     id: "waverun",
+    slug: "waverun",
     name: "WaveRun",
     tagline: "モーターボートレース",
     description:
-      "波を切って駆け抜けるモーターボートレースゲーム。ライバルをかわしてゴールを目指そう。",
+      "ハワイを舞台にした3Dボートレースゲーム。ブイゲートを順番に通過して、制限時間内のゴールを目指そう。",
     category: "game",
     platforms: ["iOS"],
     version: "1.0",
@@ -106,6 +119,7 @@ export const apps: AppInfo[] = [
   },
   {
     id: "mogrow",
+    slug: "mogrow",
     name: "MOGROW",
     tagline: "レシート育成RPG",
     description:
@@ -119,6 +133,7 @@ export const apps: AppInfo[] = [
   },
   {
     id: "wangan-murders",
+    slug: "wangan",
     name: "湾岸連続殺人事件",
     tagline: "ミステリ",
     description:
@@ -129,3 +144,7 @@ export const apps: AppInfo[] = [
     iconSrc: "/icons/wangan.png",
   },
 ];
+
+export function getAppBySlug(slug: string): AppInfo | undefined {
+  return apps.find((app) => app.slug === slug);
+}
