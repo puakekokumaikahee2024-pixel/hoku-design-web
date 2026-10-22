@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Kaisei_Decol, Noto_Sans_JP, Outfit, Pacifico } from "next/font/google";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-white font-sans text-slate-800 dark:bg-night-950 dark:text-slate-100">
         {children}
         <MotionController />
+        <Analytics />
       </body>
     </html>
   );
