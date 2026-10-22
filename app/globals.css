@@ -14,6 +14,8 @@
 @theme inline {
   --font-sans: var(--font-noto-sans-jp), system-ui, sans-serif;
   --font-display: var(--font-outfit), var(--font-noto-sans-jp), sans-serif;
+  --font-script: var(--font-pacifico), cursive;
+  --font-decol: var(--font-kaisei-decol), var(--font-noto-sans-jp), serif;
 }
 
 html {

@@ -125,7 +125,7 @@ function AppCard({ app }: { app: AppInfo }) {
       </div>
 
       <div className="mt-5 border-t border-slate-100 pt-4 dark:border-night-700">
-        {inReview ? (
+        {inReview || !app.storeUrl ? (
           <span className="inline-flex items-center gap-2 text-sm font-medium text-sunset">
             <span className="size-2 animate-pulse rounded-full bg-sunset" />
             審査中 — 近日公開
@@ -133,6 +133,8 @@ function AppCard({ app }: { app: AppInfo }) {
         ) : (
           <a
             href={app.storeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-ocean transition-colors hover:text-turquoise dark:text-turquoise dark:hover:text-sky-300"
           >
             App Store で見る

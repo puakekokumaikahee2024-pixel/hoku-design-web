@@ -16,8 +16,8 @@ export type AppInfo = {
   /** 審査中などでまだ無い場合は省略 */
   version?: string;
   status: AppStatus;
-  /** App Store / Google Play のURL（未定なら "#"） */
-  storeUrl: string;
+  /** App Store / Google Play のURL（審査中などで未定なら省略） */
+  storeUrl?: string;
   /** アイコン画像（public/ からのパス。正方形） */
   iconSrc: string;
 };
@@ -39,7 +39,7 @@ export const apps: AppInfo[] = [
     platforms: ["iOS", "macOS"],
     version: "2.0.0",
     status: "released",
-    storeUrl: "#",
+    storeUrl: "https://apps.apple.com/jp/app/rehastats-%E7%B5%B1%E8%A8%88%E8%A7%A3%E6%9E%90/id6762046167",
     iconSrc: "/icons/rehastats.jpg",
   },
   {
@@ -51,7 +51,7 @@ export const apps: AppInfo[] = [
     platforms: ["iOS"],
     version: "1.2.0",
     status: "released",
-    storeUrl: "#",
+    storeUrl: "https://apps.apple.com/jp/app/6mwt-guide/id6766694418",
     iconSrc: "/icons/6mwt-guide.png",
   },
   {
@@ -63,7 +63,7 @@ export const apps: AppInfo[] = [
     platforms: ["iOS"],
     version: "1.6.2",
     status: "released",
-    storeUrl: "#",
+    storeUrl: "https://apps.apple.com/jp/app/6%E5%88%86%E9%96%93%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E8%A8%98%E9%8C%B2-6mw-%E8%A8%98%E9%8C%B2-%E5%88%86%E6%9E%90/id6761879946",
     iconSrc: "/icons/6mw-record.jpg",
   },
   {
@@ -75,7 +75,7 @@ export const apps: AppInfo[] = [
     platforms: ["iOS", "macOS"],
     version: "2.0.0",
     status: "released",
-    storeUrl: "#",
+    storeUrl: "https://apps.apple.com/jp/app/clinstats/id6764431688",
     iconSrc: "/icons/clinstats.jpg",
   },
   {
@@ -88,7 +88,7 @@ export const apps: AppInfo[] = [
     platforms: ["iOS"],
     version: "1.0.5",
     status: "released",
-    storeUrl: "#",
+    storeUrl: "https://apps.apple.com/jp/app/pinline/id6773246094",
     iconSrc: "/icons/pinline.png",
   },
   {
@@ -101,7 +101,7 @@ export const apps: AppInfo[] = [
     platforms: ["iOS"],
     version: "1.0",
     status: "released",
-    storeUrl: "#",
+    storeUrl: "https://apps.apple.com/jp/app/waverun/id6799413773",
     iconSrc: "/icons/waverun.jpg",
   },
   {
@@ -114,7 +114,7 @@ export const apps: AppInfo[] = [
     platforms: ["iOS"],
     version: "1.0.2",
     status: "released",
-    storeUrl: "#",
+    storeUrl: "https://apps.apple.com/jp/app/mogrow/id6818719932",
     iconSrc: "/icons/mogrow.png",
   },
   {
@@ -126,7 +126,6 @@ export const apps: AppInfo[] = [
     category: "game",
     platforms: ["iOS"],
     status: "in-review",
-    storeUrl: "#",
     iconSrc: "/icons/wangan.png",
   },
 ];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Outfit } from "next/font/google";
+import { Kaisei_Decol, Noto_Sans_JP, Outfit, Pacifico } from "next/font/google";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -12,6 +12,21 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
+// 代表メッセージ（ハワイアンブロック）専用の装飾フォント
+const pacifico = Pacifico({
+  variable: "--font-pacifico",
+  weight: "400",
+  subsets: ["latin", "latin-ext"],
+  preload: false,
+});
+
+const kaiseiDecol = Kaisei_Decol({
+  variable: "--font-kaisei-decol",
+  weight: "700",
+  subsets: ["latin"],
+  preload: false,
+});
+
 export const metadata: Metadata = {
   title: "HOKU Design | 臨床の視点で作るアプリ",
   description:
@@ -22,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ja"
-      className={`${notoSansJP.variable} ${outfit.variable} h-full antialiased`}
+      className={`${notoSansJP.variable} ${outfit.variable} ${pacifico.variable} ${kaiseiDecol.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-slate-800 dark:bg-night-950 dark:text-slate-100">
         {children}

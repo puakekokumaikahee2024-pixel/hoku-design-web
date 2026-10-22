@@ -3,6 +3,7 @@ import Image from "next/image";
 import { apps, CATEGORY_LABELS } from "@/lib/apps";
 import { AppIcon } from "./components/AppIcon";
 import { AppList } from "./components/AppList";
+import { CeoMessage } from "./components/CeoMessage";
 import { Hibiscus, PalmFrond, Waves } from "./components/Decorations";
 
 const NAV_LINKS = [
@@ -169,19 +170,33 @@ function Hero() {
               key={app.id}
               className={i % 2 === 1 ? "translate-y-4" : undefined}
             >
-              <a
-                href={`#${app.id}`}
-                title={app.name}
-                className="block transition hover:-translate-y-1"
-              >
-                <AppIcon
-                  app={app}
-                  size={112}
-                  sizes="(min-width: 768px) 112px, 22vw"
-                  preload
-                  className="h-auto w-full"
-                />
-              </a>
+              {app.storeUrl ? (
+                <a
+                  href={app.storeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`${app.name}（App Store）`}
+                  className="block transition hover:-translate-y-1"
+                >
+                  <AppIcon
+                    app={app}
+                    size={112}
+                    sizes="(min-width: 768px) 112px, 22vw"
+                    preload
+                    className="h-auto w-full"
+                  />
+                </a>
+              ) : (
+                <div title={app.name}>
+                  <AppIcon
+                    app={app}
+                    size={112}
+                    sizes="(min-width: 768px) 112px, 22vw"
+                    preload
+                    className="h-auto w-full"
+                  />
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -341,7 +356,8 @@ function About() {
             </div>
           ))}
         </div>
-        <ul className="mt-12 grid gap-6 md:grid-cols-3">
+        <CeoMessage />
+        <ul className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
           {STRENGTHS.map((item) => (
             <li
               key={item.title}

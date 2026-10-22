@@ -1,4 +1,6 @@
-// 装飾用のSVG（ヤシの葉・ハイビスカス・波）。すべて aria-hidden。
+// 装飾用のSVG（ヤシの葉・モンステラ・ハイビスカス・プルメリア・波・きらめき）。すべて aria-hidden。
+
+import { useId } from "react";
 
 type Point = [number, number];
 
@@ -135,6 +137,117 @@ export function Waves({
         d="M0 135C260 112 560 168 900 135S1300 118 1440 140V160H0Z"
         className={surface}
       />
+    </svg>
+  );
+}
+
+/** モンステラの葉。切れ込みと穴は mask で抜く */
+export function Monstera({ className = "" }: { className?: string }) {
+  const maskId = useId();
+  const slits = [-62, -38, -14, 12, 38].flatMap((deg) => [deg, 180 - deg]);
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 200 220"
+      fill="currentColor"
+      className={`pointer-events-none ${className}`}
+    >
+      <mask id={maskId}>
+        <path
+          d="M100 196C42 190 6 146 8 92C10 42 50 8 100 14C150 8 192 44 192 94C192 146 158 190 100 196Z"
+          fill="white"
+        />
+        {slits.map((deg) => (
+          <path
+            key={deg}
+            d="M28 0Q70 4 112 0"
+            transform={`translate(100 100) rotate(${deg})`}
+            fill="none"
+            stroke="black"
+            strokeWidth="7"
+            strokeLinecap="round"
+          />
+        ))}
+        {[-50, -26, 0, 26, 154, 180, 206, 230].map((deg) => (
+          <ellipse
+            key={deg}
+            cx="44"
+            cy="0"
+            rx="9"
+            ry="4"
+            transform={`translate(100 100) rotate(${deg})`}
+            fill="black"
+          />
+        ))}
+        <path d="M100 30V196" stroke="black" strokeWidth="2" opacity="0.5" />
+      </mask>
+      <rect width="200" height="200" mask={`url(#${maskId})`} />
+      <path
+        d="M100 194Q102 206 96 220"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+const PLUMERIA_PETAL =
+  "M0 0C-8 -16 -6 -40 8 -50C22 -58 34 -46 28 -30C22 -16 10 -6 0 0Z";
+
+/** プルメリアの花（風車状の5枚花びら） */
+export function Plumeria({
+  className = "",
+  center = "#ffd54f",
+}: {
+  className?: string;
+  /** 花の中心の色 */
+  center?: string;
+}) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="-58 -58 116 116"
+      className={`pointer-events-none ${className}`}
+    >
+      {[0, 72, 144, 216, 288].map((r) => (
+        <path
+          key={r}
+          d={PLUMERIA_PETAL}
+          transform={`rotate(${r})`}
+          fill="currentColor"
+          stroke="rgb(0 0 0 / 0.06)"
+          strokeWidth="1.5"
+        />
+      ))}
+      {[0, 72, 144, 216, 288].map((r) => (
+        <path
+          key={r}
+          d="M0 0C-2 -8 0 -18 6 -24"
+          transform={`rotate(${r})`}
+          fill="none"
+          stroke={center}
+          strokeWidth="9"
+          strokeLinecap="round"
+          opacity="0.85"
+        />
+      ))}
+      <circle r="5" fill={center} />
+    </svg>
+  );
+}
+
+/** 4方向に光るきらめき（星） */
+export function Sparkle({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="-12 -12 24 24"
+      fill="currentColor"
+      className={`pointer-events-none ${className}`}
+    >
+      <path d="M0 -12C1 -3 3 -1 12 0C3 1 1 3 0 12C-1 3 -3 1 -12 0C-3 -1 -1 -3 0 -12Z" />
     </svg>
   );
 }
