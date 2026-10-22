@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { apps, CATEGORY_LABELS } from "@/lib/apps";
-import { AppIcon } from "./components/AppIcon";
 import { AppList } from "./components/AppList";
 import { CeoMessage } from "./components/CeoMessage";
+import { Constellation } from "./components/Constellation";
+import { HeroCanvas } from "./components/HeroCanvas";
+import { ParallaxHero } from "./components/ParallaxHero";
 import { Hibiscus, PalmFrond, Waves } from "./components/Decorations";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
+import { Word } from "./components/Words";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const STATS = [
-  { value: `${apps.length}`, unit: "本", label: "公開アプリ" },
+/** count がある項目は、画面に入ったとき 0 から数え上げる */
+const STATS: { value: string; count?: number; unit: string; label: string }[] = [
+  { value: `${apps.length}`, count: apps.length, unit: "本", label: "公開アプリ" },
   { value: "iOS", unit: "・Android", label: "対応プラットフォーム" },
   {
     value: `${Object.keys(CATEGORY_LABELS).length}`,
+    count: Object.keys(CATEGORY_LABELS).length,
     unit: "つ",
     label: "カテゴリ",
   },
@@ -67,41 +72,47 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="relative isolate overflow-hidden">
-      {/* 光と海のグラデーション */}
+    <ParallaxHero className="relative isolate overflow-hidden">
+      {/* 光と海のグラデーション（奥：ゆっくり） */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-linear-to-br from-cyan-50 via-white to-orange-50/70 dark:from-night-900 dark:via-night-950 dark:to-night-950"
-      />
+        className="parallax-layer pointer-events-none absolute inset-0 -z-10 [--depth:0.2]"
+      >
+        <div className="absolute inset-0 -z-10 bg-linear-to-br from-cyan-50 via-white to-orange-50/70 dark:from-night-900 dark:via-night-950 dark:to-night-950" />
+        <div className="absolute -top-24 right-[-10%] -z-10 size-[30rem] rounded-full bg-sunset/35 blur-3xl dark:bg-sunset/12" />
+        <div className="absolute top-32 left-[-15%] -z-10 size-[28rem] rounded-full bg-turquoise/30 blur-3xl dark:bg-turquoise/15" />
+        {/* 海面の波・水面のきらめき・瞬く星 */}
+        <HeroCanvas className="absolute inset-0 size-full" />
+      </div>
+      {/* うっすらヤシの葉（最も奥：いちばんゆっくり）。右側は星座と重なるので左だけ残す */}
       <div
         aria-hidden
-        className="absolute -top-24 right-[-10%] -z-10 size-[30rem] rounded-full bg-sunset/35 blur-3xl dark:bg-sunset/12"
-      />
-      <div
-        aria-hidden
-        className="absolute top-32 left-[-15%] -z-10 size-[28rem] rounded-full bg-turquoise/30 blur-3xl dark:bg-turquoise/15"
-      />
-      {/* うっすらヤシの葉 */}
-      <PalmFrond className="absolute -top-10 -left-24 -z-10 w-[26rem] rotate-[18deg] text-tropic opacity-[0.12] sm:w-[34rem] dark:text-turquoise dark:opacity-[0.07]" />
-      <PalmFrond className="absolute top-6 -right-32 -z-10 w-[24rem] -scale-x-100 -rotate-[8deg] text-teal-600 opacity-[0.09] sm:w-[30rem] dark:text-turquoise dark:opacity-[0.06]" />
-      <Stars />
+        className="parallax-layer pointer-events-none absolute inset-0 -z-10 [--depth:0.35]"
+      >
+        <PalmFrond className="absolute -top-10 -left-24 -z-10 w-[26rem] rotate-[18deg] text-tropic opacity-[0.12] sm:w-[34rem] dark:text-turquoise dark:opacity-[0.07]" />
+      </div>
 
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pt-16 pb-32 sm:px-6 md:grid-cols-[1.1fr_1fr] md:pt-24 md:pb-40">
-        <div>
+        {/* キャッチコピー（ほぼ通常速度） */}
+        <div className="parallax-layer [--depth:0.05]">
           <p className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 font-display text-xs font-medium tracking-widest text-ocean ring-1 ring-ocean/15 dark:bg-night-800/70 dark:text-turquoise dark:ring-turquoise/20">
             <span aria-hidden className="text-sunset">
               ★
             </span>
             HOKU — ハワイ語で「星」
           </p>
-          <h1 className="mt-6 text-4xl leading-tight font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
-            臨床の現場から、
+          <h1 className="hero-words mt-6 text-4xl leading-tight font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
+            <Word i={0}>臨床の現場から、</Word>
             <br />
-            <span className="bg-linear-to-r from-ocean via-turquoise to-sunset bg-clip-text text-transparent">
+            <Word
+              i={1}
+              className="bg-linear-to-r from-ocean via-turquoise to-sunset bg-clip-text text-transparent"
+            >
               星のように
-            </span>
+            </Word>
             <br className="sm:hidden" />
-            寄り添うアプリを。
+            <Word i={2}>寄り添う</Word>
+            <Word i={3}>アプリを。</Word>
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
             HOKU Design は、看護師と理学療法士の二人でつくる小さなアプリスタジオ。
@@ -124,78 +135,24 @@ function Hero() {
           </div>
         </div>
 
-        <ul
-          aria-label="公開中のアプリ"
-          className="mx-auto grid w-full max-w-sm grid-cols-4 gap-3 sm:gap-4 md:max-w-md"
-        >
-          {apps.map((app, i) => (
-            <li
-              key={app.id}
-              className={i % 2 === 1 ? "translate-y-4" : undefined}
-            >
-              {app.storeUrl ? (
-                <a
-                  href={app.storeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={`${app.name}（App Store）`}
-                  className="block transition hover:-translate-y-1"
-                >
-                  <AppIcon
-                    app={app}
-                    size={112}
-                    sizes="(min-width: 768px) 112px, 22vw"
-                    preload
-                    className="h-auto w-full"
-                  />
-                </a>
-              ) : (
-                <div title={app.name}>
-                  <AppIcon
-                    app={app}
-                    size={112}
-                    sizes="(min-width: 768px) 112px, 22vw"
-                    preload
-                    className="h-auto w-full"
-                  />
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
+        {/* アプリの星座（手前：やや速く） */}
+        <div className="parallax-layer mx-auto w-full max-w-sm [--depth:-0.08] md:max-w-md">
+          <Constellation />
+        </div>
       </div>
 
       <Waves className="absolute inset-x-0 bottom-0 -z-10 h-24 sm:h-36" />
-    </section>
-  );
-}
-
-function Stars() {
-  const stars = [
-    "top-[12%] left-[8%]",
-    "top-[22%] left-[46%]",
-    "top-[8%] left-[70%]",
-    "top-[34%] left-[88%]",
-    "top-[48%] left-[30%]",
-    "top-[18%] left-[24%]",
-  ];
-  return (
-    <div aria-hidden className="absolute inset-0 -z-10 hidden dark:block">
-      {stars.map((pos, i) => (
-        <span
-          key={pos}
-          className={`absolute size-1 rounded-full bg-white animate-pulse ${pos}`}
-          style={{ animationDelay: `${i * 0.4}s`, opacity: 0.7 }}
-        />
-      ))}
-    </div>
+    </ParallaxHero>
   );
 }
 
 function StatsBar() {
   return (
     <section aria-label="数字で見る HOKU Design" className="relative z-10 px-4 sm:px-6">
-      <dl className="mx-auto -mt-8 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-3xl bg-slate-200/70 shadow-xl shadow-ocean/5 ring-1 ring-slate-200/70 md:grid-cols-4 dark:bg-night-700 dark:ring-night-700">
+      <dl
+        data-reveal="fade"
+        className="mx-auto -mt-8 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-3xl bg-slate-200/70 shadow-xl shadow-ocean/5 ring-1 ring-slate-200/70 md:grid-cols-4 dark:bg-night-700 dark:ring-night-700"
+      >
         {STATS.map((stat, i) => (
           <div
             key={stat.label}
@@ -204,8 +161,15 @@ function StatsBar() {
             <dt className="order-2 mt-1 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
               {stat.label}
             </dt>
-            <dd className="order-1 font-display text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
-              {stat.value}
+            <dd className="order-1 font-display text-3xl font-bold text-slate-900 tabular-nums sm:text-4xl dark:text-white">
+              {stat.count === undefined ? (
+                stat.value
+              ) : (
+                // カウントアップ（MotionController）が hydration 前に数字を書き換えることがあるため
+                <span data-count-to={stat.count} suppressHydrationWarning>
+                  {stat.value}
+                </span>
+              )}
               <span
                 className={`ml-0.5 text-base font-semibold sm:text-lg ${i % 2 === 0 ? "text-turquoise" : "text-sunset"}`}
               >
@@ -223,21 +187,33 @@ function SectionHeading({
   eyebrow,
   title,
   lead,
+  wordReveal = false,
 }: {
   eyebrow: string;
   title: ReactNode;
   lead?: string;
+  /** title が <Word> で区切られていて、文節ごとに表示したいとき */
+  wordReveal?: boolean;
 }) {
   return (
     <div className="relative z-10 mx-auto max-w-2xl text-center">
-      <p className="font-display text-sm font-semibold tracking-[0.25em] text-cyan-700 uppercase dark:text-turquoise">
+      <p
+        data-reveal="heading"
+        className="font-display text-sm font-semibold tracking-[0.25em] text-cyan-700 uppercase dark:text-turquoise"
+      >
         {eyebrow}
       </p>
-      <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance text-slate-900 sm:text-4xl dark:text-white">
+      <h2
+        data-reveal={wordReveal ? "words" : "heading"}
+        className="mt-3 text-3xl font-bold tracking-tight text-balance text-slate-900 sm:text-4xl dark:text-white"
+      >
         {title}
       </h2>
       {lead && (
-        <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+        <p
+          data-reveal="heading"
+          className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300"
+        >
           {lead}
         </p>
       )}
@@ -282,19 +258,23 @@ function About() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="About"
+          wordReveal
           title={
             <span className="break-keep">
-              看護師と
+              <Word i={0}>看護師と</Word>
               <wbr />
-              理学療法士が、
+              <Word i={1}>理学療法士が、</Word>
               <wbr />
               <br className="hidden sm:inline" />
-              二人でつくるアプリ
+              <Word i={2}>二人でつくるアプリ</Word>
             </span>
           }
           lead="HOKU Design は、元看護師の妻が代表を務め、理学療法士の夫が開発を担当する二人のアプリスタジオです。看護とリハビリ、医療現場の二つの視点が合わさることで、現場で本当に使えるツールが生まれると考えています。"
         />
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+        <div
+          data-reveal
+          className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-5"
+        >
           {MEMBERS.map((member, i) => (
             <div key={member.role} className="contents">
               {i > 0 && (
@@ -324,6 +304,7 @@ function About() {
           {STRENGTHS.map((item) => (
             <li
               key={item.title}
+              data-reveal
               className="rounded-3xl bg-white/80 p-7 ring-1 ring-white backdrop-blur dark:bg-night-950/60 dark:ring-night-700"
             >
               <div
@@ -350,7 +331,9 @@ function About() {
 function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 px-4 pt-10 pb-20 sm:px-6 sm:pt-14 sm:pb-24">
-      <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] bg-linear-135 from-ocean via-[#1a9fc9] to-turquoise px-6 py-14 text-center text-white shadow-2xl shadow-ocean/20 sm:px-12 dark:from-night-800 dark:via-ocean/60 dark:to-night-800">
+      <div
+        data-reveal
+        className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] bg-linear-135 from-ocean via-[#1a9fc9] to-turquoise px-6 py-14 text-center text-white shadow-2xl shadow-ocean/20 sm:px-12 dark:from-night-800 dark:via-ocean/60 dark:to-night-800">
         <div
           aria-hidden
           className="absolute -top-24 -right-16 -z-10 size-72 rounded-full bg-sunset/50 blur-3xl dark:bg-sunset/25"

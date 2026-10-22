@@ -31,6 +31,7 @@ export function AppList() {
       <div
         role="group"
         aria-label="カテゴリで絞り込み"
+        data-reveal="heading"
         className="flex flex-wrap justify-center gap-2"
       >
         {FILTERS.map(({ value, label }) => {
@@ -64,7 +65,7 @@ export function AppList() {
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((app) => (
-          <li key={app.id}>
+          <li key={app.id} data-reveal>
             <AppCard app={app} />
           </li>
         ))}

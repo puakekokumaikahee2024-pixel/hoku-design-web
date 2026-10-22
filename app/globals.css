@@ -25,3 +25,120 @@ html {
 body {
   overflow-x: clip;
 }
+
+/* ヒーローのパララックス（ParallaxHero が --parallax を更新する）。
+   --depth は「スクロールに逆らって動く割合」: 正なら奥（ゆっくり）、負なら手前（速く） */
+.parallax-layer {
+  transform: translate3d(0, calc(var(--parallax, 0) * var(--depth, 0) * 1px), 0);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-layer {
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* ---- スクロール演出（MotionController が data-revealed を付ける） ----
+   data-motion が付いているとき（head の inline script）だけ初期状態を隠す。
+   data-revealed: なし = 待機 / "in" = 表示アニメーション中 / "done" = 完了（演出用スタイルを外す） */
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion] [data-reveal]:not([data-revealed], [data-reveal="words"]) {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  [data-motion] [data-reveal="fade"]:not([data-revealed]) {
+    transform: none;
+  }
+  [data-motion] [data-reveal][data-revealed="in"] {
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-motion] [data-reveal="heading"][data-revealed="in"] {
+    transition-duration: 0.6s, 0.7s;
+  }
+
+  /* 見出しの文節リビール。.word ごとに --i で順番をずらす */
+  [data-motion] [data-reveal="words"]:not([data-revealed]) .word {
+    opacity: 0;
+    transform: translate3d(0, 0.35em, 0);
+  }
+  [data-motion] [data-reveal="words"][data-revealed] .word {
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--i, 0) * 120ms);
+  }
+
+  /* ヒーローの見出しはファーストビューなので、読み込み時に CSS だけで表示する（JS を待たない） */
+  [data-motion] .hero-words .word {
+    animation: word-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i, 0) * 120ms + 100ms);
+  }
+
+  [data-motion] [data-zoom] {
+    will-change: transform;
+  }
+
+  /* JS が動かなかったときの保険：hydration で "ready" に変わらなければ 2.5 秒後に全部表示する */
+  [data-motion="on"] [data-reveal]:not([data-revealed]),
+  [data-motion="on"] [data-reveal="words"]:not([data-revealed]) .word {
+    animation: reveal-failsafe 0s 2.5s forwards;
+  }
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.35em, 0);
+  }
+}
+
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ヒーローの星座：線とグローがゆっくり明滅する（--i で位相をずらす） */
+.constellation-line {
+  opacity: 0.7;
+}
+.constellation-glow {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .constellation-line {
+    animation: constellation-pulse 5s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * -0.7s);
+  }
+  .constellation-glow {
+    animation: constellation-glow 4.5s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * -0.6s);
+  }
+}
+
+@keyframes constellation-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes constellation-glow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

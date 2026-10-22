@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useId } from "react";
 import ceoPhoto from "@/public/ceo.png";
 import { Hibiscus, Monstera, PalmFrond, Plumeria, Sparkle } from "./Decorations";
+import { Word } from "./Words";
 
 const PARAGRAPHS = [
   "看護師として医療の現場に立っていた頃、本当に必要なものほど手の届くところにない、と感じる場面に何度も出会いました。だからこそ HOKU Design では、使う人の声に耳を傾け、「現場の人が本当に必要としているもの」をいちばん大切にしています。",
@@ -31,7 +32,7 @@ export function CeoMessage() {
       <Backdrop />
 
       <div className="grid items-center gap-12 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-10 lg:gap-16">
-        <figure className="mx-auto w-full max-w-[19rem] md:max-w-none">
+        <figure data-reveal className="mx-auto w-full max-w-[19rem] md:max-w-none">
           <TapaFrame />
           <figcaption className="mt-6 text-center [text-shadow:0_1px_8px_rgb(0_0_0/0.45)]">
             <p className="font-display text-2xl font-semibold tracking-[0.2em] text-amber-100">
@@ -43,7 +44,9 @@ export function CeoMessage() {
           </figcaption>
         </figure>
 
-        <div className="relative rounded-[2rem] bg-[#031b33]/45 p-6 ring-1 ring-white/15 backdrop-blur-sm sm:p-9 dark:bg-[#020c18]/55">
+        <div
+          data-reveal
+          className="relative rounded-[2rem] bg-[#031b33]/45 p-6 ring-1 ring-white/15 backdrop-blur-sm sm:p-9 dark:bg-[#020c18]/55">
           <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="font-script text-2xl text-amber-200 sm:text-3xl">
               ʻŌlelo Aloha
@@ -54,9 +57,11 @@ export function CeoMessage() {
           </p>
           <h3
             id="ceo-message-heading"
+            data-reveal="words"
             className="mt-3 font-decol text-3xl font-bold tracking-wide [text-shadow:0_2px_12px_rgb(0_0_0/0.35)] sm:text-4xl"
           >
-            代表メッセージ
+            <Word i={0}>代表</Word>
+            <Word i={1}>メッセージ</Word>
           </h3>
           <WaveRule />
 
@@ -155,13 +160,18 @@ function TapaFrame() {
           </defs>
           <rect width="100%" height="100%" fill={`url(#${patternId})`} />
         </svg>
-        <Image
-          src={ceoPhoto}
-          alt="ハワイの海を背景にした代表 MIHO ADACHI のポートレート"
-          sizes="(min-width: 1024px) 400px, (min-width: 768px) 38vw, 19rem"
-          placeholder="blur"
-          className="relative aspect-[3/4] w-full rounded-[2.25rem] object-cover"
-        />
+        {/* スクロールに応じて少しずつ拡大（MotionController）。はみ出しは外側の角丸で切る */}
+        <div className="relative overflow-hidden rounded-[2.25rem]">
+          <div data-zoom>
+            <Image
+              src={ceoPhoto}
+              alt="ハワイの海を背景にした代表 MIHO ADACHI のポートレート"
+              sizes="(min-width: 1024px) 400px, (min-width: 768px) 38vw, 19rem"
+              placeholder="blur"
+              className="block aspect-[3/4] w-full object-cover"
+            />
+          </div>
+        </div>
       </div>
 
       {/* レイ（花飾り）: 左上と右下に花を重ねる */}
