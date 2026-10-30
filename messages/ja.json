@@ -24,7 +24,10 @@
     "apps": "公開アプリ",
     "platforms": "対応プラットフォーム",
     "categories": "カテゴリ",
-    "since": "活動開始"
+    "since": "活動開始",
+    "visitors": "訪問者数",
+    "pageviews": "ページビュー",
+    "countries": "アクセス国"
   },
   "appsSection": {
     "eyebrow": "Apps",

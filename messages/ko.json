@@ -24,7 +24,10 @@
     "apps": "출시 앱",
     "platforms": "지원 플랫폼",
     "categories": "카테고리",
-    "since": "시작 연도"
+    "since": "시작 연도",
+    "visitors": "방문자 수",
+    "pageviews": "페이지 뷰",
+    "countries": "접속 국가"
   },
   "appsSection": {
     "eyebrow": "Apps",

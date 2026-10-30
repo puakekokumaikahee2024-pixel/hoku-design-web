@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { apps, CATEGORY_LABELS } from "@/lib/apps";
+import { getAnalyticsStats, type InsightStats } from "@/lib/vercel-analytics";
 import { AppList } from "../components/AppList";
 import { CeoMessage } from "../components/CeoMessage";
 import { Constellation } from "../components/Constellation";
@@ -41,13 +42,14 @@ const STATS: { value: string; count?: number; unitKey: string; labelKey: string 
 
 const STRENGTH_KEYS = ["1", "2", "3"] as const;
 
-export default function Home() {
+export default async function Home({ params }: Props) {
+  const analytics = await getAnalyticsStats();
   return (
     <div className="relative flex flex-1 flex-col overflow-x-clip">
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <StatsBar />
+        <StatsBar analytics={analytics} />
         <AppsSection />
         <About />
         <Contact />
@@ -122,29 +124,40 @@ function Hero() {
   );
 }
 
-function StatsBar() {
+function StatsBar({ analytics }: { analytics: InsightStats | null }) {
   const t = useTranslations("stats");
+  const colsClass = analytics
+    ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
+    : "grid-cols-2 md:grid-cols-4";
+  const analyticsStats = analytics
+    ? [
+        { value: analytics.uniqueVisitors.toLocaleString(), labelKey: "visitors", unitKey: "人" },
+        { value: analytics.totalPageViews.toLocaleString(), labelKey: "pageviews", unitKey: "PV" },
+        { value: String(analytics.countriesCount), labelKey: "countries", unitKey: "ヵ国" },
+      ]
+    : [];
+  const allStats = [...STATS, ...analyticsStats];
   return (
     <section aria-label="HOKU Design" className="relative z-10 px-4 sm:px-6">
       <dl
         data-reveal="fade"
-        className="mx-auto -mt-8 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-3xl bg-slate-200/70 shadow-xl shadow-ocean/5 ring-1 ring-slate-200/70 md:grid-cols-4 dark:bg-night-700 dark:ring-night-700"
+        className={`mx-auto -mt-8 grid max-w-5xl gap-px overflow-hidden rounded-3xl bg-slate-200/70 shadow-xl shadow-ocean/5 ring-1 ring-slate-200/70 dark:bg-night-700 dark:ring-night-700 ${colsClass}`}
       >
-        {STATS.map((stat, i) => (
+        {allStats.map((stat, i) => (
           <div
             key={stat.labelKey}
             className="flex flex-col items-center bg-white px-4 py-6 text-center dark:bg-night-900"
           >
             <dt className="order-2 mt-1 text-xs text-slate-500 sm:text-sm dark:text-slate-400">
-              {t(stat.labelKey as "apps" | "platforms" | "categories" | "since")}
+              {t(stat.labelKey as "apps" | "platforms" | "categories" | "since" | "visitors" | "pageviews" | "countries")}
             </dt>
             <dd className="order-1 font-display text-3xl font-bold text-slate-900 tabular-nums sm:text-4xl dark:text-white">
-              {stat.count === undefined ? (
-                stat.value
-              ) : (
+              {"count" in stat && stat.count !== undefined ? (
                 <span data-count-to={stat.count} suppressHydrationWarning>
                   {stat.value}
                 </span>
+              ) : (
+                stat.value
               )}
               <span
                 className={`ml-0.5 text-base font-semibold sm:text-lg ${i % 2 === 0 ? "text-turquoise" : "text-sunset"}`}

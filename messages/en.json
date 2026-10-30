@@ -24,7 +24,10 @@
     "apps": "Published Apps",
     "platforms": "Platforms",
     "categories": "Categories",
-    "since": "Active Since"
+    "since": "Active Since",
+    "visitors": "Visitors",
+    "pageviews": "Page Views",
+    "countries": "Countries"
   },
   "appsSection": {
     "eyebrow": "Apps",

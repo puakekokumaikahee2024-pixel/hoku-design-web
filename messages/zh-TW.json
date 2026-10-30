@@ -24,7 +24,10 @@
     "apps": "已發布應用程式",
     "platforms": "支援平台",
     "categories": "類別",
-    "since": "成立年份"
+    "since": "成立年份",
+    "visitors": "訪客數",
+    "pageviews": "頁面瀏覽",
+    "countries": "訪問國家"
   },
   "appsSection": {
     "eyebrow": "Apps",
