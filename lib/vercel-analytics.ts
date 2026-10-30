@@ -21,8 +21,8 @@ async function fetchInsights(
 }
 
 export async function getAnalyticsStats(): Promise<InsightStats | null> {
-  const token = process.env.VERCEL_TOKEN;
-  const projectId = process.env.VERCEL_PROJECT_ID;
+  const token = process.env.HOKU_VERCEL_TOKEN;
+  const projectId = process.env.HOKU_VERCEL_PROJECT_ID;
   if (!token || !projectId) return null;
   try {
     const [views, countries] = await Promise.all([
