@@ -23,7 +23,7 @@ type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-export const dynamic = "force-static";
+export const revalidate = false;
 
 export function generateStaticParams() {
   return apps.flatMap((app) =>
