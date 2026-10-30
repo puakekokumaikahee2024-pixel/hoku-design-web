@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "siteName": "HOKU Design",
+    "siteTitle": "HOKU Design | Apps Creadas desde la Experiencia Clínica",
+    "siteDescription": "HOKU Design es un estudio de dos personas formado por una exenfermera y un fisioterapeuta. Publicamos apps para el ámbito sanitario, el estilo de vida y los juegos."
+  },
+  "nav": {
+    "apps": "Apps",
+    "tools": "Herramientas",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "HOKU — \"Estrella\" en hawaiano",
+    "line1": "Desde la primera línea clínica,",
+    "line2": "como una estrella",
+    "line3": "permanecemos",
+    "line4": "a tu lado.",
+    "lead": "HOKU Design es un pequeño estudio de apps creado por una enfermera y un fisioterapeuta. Desde herramientas para profesionales sanitarios hasta juegos que alegran el día a día — cada app está hecha con cuidado.",
+    "cta": "Ver Apps",
+    "ctaAbout": "Sobre HOKU Design"
+  },
+  "stats": {
+    "apps": "Apps Publicadas",
+    "platforms": "Plataformas",
+    "categories": "Categorías",
+    "since": "Activos desde"
+  },
+  "appsSection": {
+    "eyebrow": "Apps",
+    "title": "Nuestras Apps",
+    "lead": "Salud, estilo de vida y juegos. Apps nacidas de retos clínicos reales y de la alegría cotidiana.",
+    "viewOnAppStore": "Ver en App Store",
+    "viewOnGooglePlay": "Ver en Google Play",
+    "comingSoon": "En revisión — Próximamente"
+  },
+  "about": {
+    "eyebrow": "Nosotros",
+    "titlePart1": "Una enfermera y",
+    "titlePart2": "un fisioterapeuta",
+    "titlePart3": "creando apps juntos",
+    "lead": "HOKU Design es un estudio de dos personas dirigido por una exenfermera (CEO) y desarrollado por un fisioterapeuta. Creemos que combinar las perspectivas de enfermería y rehabilitación genera herramientas que realmente funcionan en entornos clínicos reales.",
+    "ceoRole": "CEO",
+    "ceoTitle": "Exenfermera",
+    "ceoView": "Perspectiva de Enfermería",
+    "devRole": "Desarrollador",
+    "devTitle": "Fisioterapeuta",
+    "devView": "Perspectiva de Rehabilitación",
+    "strength1Title": "Dos perspectivas del terreno",
+    "strength1Body": "Ambos hemos trabajado con pacientes en enfermería y rehabilitación. Por eso identificamos las herramientas que realmente hacen falta y las convertimos en apps.",
+    "strength2Title": "Diseño basado en evidencia",
+    "strength2Body": "Nuestros métodos de evaluación y técnicas estadísticas siguen los estándares clínicos e investigadores, garantizando la precisión que necesitas en la práctica real.",
+    "strength3Title": "Diseño amable para el día a día",
+    "strength3Body": "Una interfaz sencilla y clara, fácil de usar incluso en una clínica con mucho ritmo. Creamos apps que encajan en la vida de las personas — desde la salud hasta el ocio."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "No dudes en escribirnos",
+    "lead": "Aceptamos comentarios, informes de errores, solicitudes y consultas sobre el desarrollo de apps para el sector sanitario. Contáctanos cuando quieras.",
+    "button": "✉️ Envíanos un email"
+  },
+  "footer": {
+    "copyright": "© 2024 HOKU Design"
+  },
+  "appDetail": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbApps": "Apps",
+    "overview": "Descripción",
+    "features": "Funciones principales",
+    "forYou": "¿Para quién es?",
+    "requirements": "Requisitos",
+    "os": "Sistema operativo",
+    "version": "Versión",
+    "category": "Categoría",
+    "languages": "Idiomas",
+    "pricing": "Precio",
+    "availability": "Disponibilidad",
+    "availabilityReleased": "Disponible en App Store",
+    "availabilityReview": "En revisión — Próximamente",
+    "moreApps": "Más apps",
+    "backToTop": "← Volver al inicio",
+    "viewOnAppStore": "Ver en App Store",
+    "viewOnGooglePlay": "Ver en Google Play",
+    "latestOsNote": "Consulta la página de App Store para ver la versión de SO compatible más reciente."
+  },
+  "categories": {
+    "medical": "Salud",
+    "lifestyle": "Estilo de vida",
+    "game": "Juego"
+  }
+}

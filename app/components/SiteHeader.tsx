@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NAV_LINKS } from "@/lib/site";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 export function SiteHeader() {
   return (
@@ -17,24 +18,26 @@ export function SiteHeader() {
           />
           <span className="font-display text-base font-bold tracking-tight whitespace-nowrap sm:text-lg">
             <span className="text-ocean dark:text-turquoise">HOKU</span>{" "}
-            {/* ナビが4項目あるため、狭い画面では Design を省く */}
             <span className="font-medium text-slate-600 max-[420px]:hidden dark:text-slate-300">
               Design
             </span>
           </span>
         </Link>
-        <ul className="flex items-center text-[13px] font-medium sm:gap-2 sm:text-sm">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="rounded-full px-1.5 py-1.5 whitespace-nowrap max-[360px]:px-1 max-[360px]:text-xs text-slate-600 transition-colors hover:bg-turquoise/10 hover:text-ocean sm:px-4 dark:text-slate-300 dark:hover:text-turquoise"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-1">
+          <ul className="flex items-center text-[13px] font-medium sm:gap-2 sm:text-sm">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="rounded-full px-1.5 py-1.5 whitespace-nowrap max-[360px]:px-1 max-[360px]:text-xs text-slate-600 transition-colors hover:bg-turquoise/10 hover:text-ocean sm:px-4 dark:text-slate-300 dark:hover:text-turquoise"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <LocaleSwitcher />
+        </div>
       </nav>
     </header>
   );

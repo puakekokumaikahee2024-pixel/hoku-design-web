@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "siteName": "HOKU Design",
+    "siteTitle": "HOKU Design | Apps Built from Clinical Experience",
+    "siteDescription": "HOKU Design is a two-person app studio run by a former nurse and a physical therapist. We publish apps for healthcare, lifestyle, and games."
+  },
+  "nav": {
+    "apps": "Apps",
+    "tools": "Tools",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "HOKU — \"Star\" in Hawaiian",
+    "line1": "From the clinical frontline,",
+    "line2": "like a star",
+    "line3": "we stay",
+    "line4": "close to you.",
+    "lead": "HOKU Design is a small app studio created by a nurse and a physical therapist. From tools that help healthcare professionals to games that brighten everyday life — each app is made with care.",
+    "cta": "View Apps",
+    "ctaAbout": "About HOKU Design"
+  },
+  "stats": {
+    "apps": "Published Apps",
+    "platforms": "Platforms",
+    "categories": "Categories",
+    "since": "Active Since"
+  },
+  "appsSection": {
+    "eyebrow": "Apps",
+    "title": "Our Apps",
+    "lead": "Healthcare, lifestyle, and games. Apps born from real clinical challenges and everyday joy.",
+    "viewOnAppStore": "View on App Store",
+    "viewOnGooglePlay": "View on Google Play",
+    "comingSoon": "Under Review — Coming Soon"
+  },
+  "about": {
+    "eyebrow": "About",
+    "titlePart1": "A Nurse and a",
+    "titlePart2": "Physical Therapist",
+    "titlePart3": "Building Apps Together",
+    "lead": "HOKU Design is a two-person app studio led by a former nurse (CEO) and developed by a physical therapist. We believe that combining the perspectives of nursing and rehabilitation creates tools that truly work in real clinical settings.",
+    "ceoRole": "CEO",
+    "ceoTitle": "Former Nurse",
+    "ceoView": "Nursing Perspective",
+    "devRole": "Developer",
+    "devTitle": "Physical Therapist",
+    "devView": "Rehabilitation Perspective",
+    "strength1Title": "Two Perspectives from the Field",
+    "strength1Body": "Having both worked with patients in nursing and rehabilitation, we notice the tools that are truly missing. We turn those insights directly into apps.",
+    "strength2Title": "Evidence-Based Design",
+    "strength2Body": "Our assessment methods and statistical techniques follow clinical and research standards, ensuring accuracy you can rely on in real practice.",
+    "strength3Title": "Gentle Design for Daily Use",
+    "strength3Body": "Simple, bright UI that's easy to use even in a busy clinic. We deliver apps that fit seamlessly into people's everyday lives — from healthcare to play."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Feel Free to Reach Out",
+    "lead": "We welcome feedback, bug reports, requests, and inquiries about healthcare app development. Get in touch anytime.",
+    "button": "✉️ Send Us an Email"
+  },
+  "footer": {
+    "copyright": "© 2024 HOKU Design"
+  },
+  "appDetail": {
+    "breadcrumbHome": "Home",
+    "breadcrumbApps": "Apps",
+    "overview": "Overview",
+    "features": "Features",
+    "forYou": "Who It's For",
+    "requirements": "Requirements",
+    "os": "OS",
+    "version": "Version",
+    "category": "Category",
+    "languages": "Languages",
+    "pricing": "Pricing",
+    "availability": "Availability",
+    "availabilityReleased": "Available on App Store",
+    "availabilityReview": "Under Review — Coming Soon",
+    "moreApps": "More Apps",
+    "backToTop": "← Back to Top",
+    "viewOnAppStore": "View on App Store",
+    "viewOnGooglePlay": "View on Google Play",
+    "latestOsNote": "Check the App Store page for the latest supported OS version."
+  },
+  "categories": {
+    "medical": "Medical",
+    "lifestyle": "Lifestyle",
+    "game": "Game"
+  }
+}

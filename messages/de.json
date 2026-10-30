@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "siteName": "HOKU Design",
+    "siteTitle": "HOKU Design | Apps aus klinischer Erfahrung",
+    "siteDescription": "HOKU Design ist ein Zwei-Personen-App-Studio, bestehend aus einer ehemaligen Krankenschwester und einem Physiotherapeuten. Wir veröffentlichen Apps für Gesundheitswesen, Lifestyle und Spiele."
+  },
+  "nav": {
+    "apps": "Apps",
+    "tools": "Tools",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "HOKU — „Stern“ auf Hawaiianisch",
+    "line1": "Von der klinischen Front,",
+    "line2": "wie ein Stern",
+    "line3": "bleiben wir",
+    "line4": "an deiner Seite.",
+    "lead": "HOKU Design ist ein kleines App-Studio, gegründet von einer Krankenschwester und einem Physiotherapeuten. Von Werkzeugen für medizinisches Fachpersonal bis hin zu Spielen, die den Alltag bereichern — jede App wird mit Sorgfalt entwickelt.",
+    "cta": "Apps ansehen",
+    "ctaAbout": "Über HOKU Design"
+  },
+  "stats": {
+    "apps": "Veröffentlichte Apps",
+    "platforms": "Plattformen",
+    "categories": "Kategorien",
+    "since": "Aktiv seit"
+  },
+  "appsSection": {
+    "eyebrow": "Apps",
+    "title": "Unsere Apps",
+    "lead": "Gesundheit, Lifestyle und Spiele. Apps, die aus echten klinischen Herausforderungen und alltäglicher Freude entstanden sind.",
+    "viewOnAppStore": "Im App Store ansehen",
+    "viewOnGooglePlay": "Bei Google Play ansehen",
+    "comingSoon": "In Prüfung — Demnächst verfügbar"
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "titlePart1": "Eine Krankenschwester",
+    "titlePart2": "und ein Physiotherapeut",
+    "titlePart3": "entwickeln Apps gemeinsam",
+    "lead": "HOKU Design ist ein Zwei-Personen-Studio unter der Leitung einer ehemaligen Krankenschwester (CEO) und entwickelt von einem Physiotherapeuten. Wir glauben, dass die Kombination aus Pflege- und Rehabilitationsperspektive Tools entstehen lässt, die wirklich im klinischen Alltag funktionieren.",
+    "ceoRole": "CEO",
+    "ceoTitle": "Ehemalige Krankenschwester",
+    "ceoView": "Pflegeperspektive",
+    "devRole": "Entwickler",
+    "devTitle": "Physiotherapeut",
+    "devView": "Rehabilitationsperspektive",
+    "strength1Title": "Zwei Perspektiven aus der Praxis",
+    "strength1Body": "Wir haben beide mit Patienten in der Pflege und Rehabilitation gearbeitet. Deshalb erkennen wir die Werkzeuge, die wirklich fehlen, und verwandeln diese Erkenntnisse direkt in Apps.",
+    "strength2Title": "Evidenzbasiertes Design",
+    "strength2Body": "Unsere Bewertungsmethoden und statistischen Verfahren folgen klinischen und wissenschaftlichen Standards und gewährleisten die Genauigkeit, die du in der realen Praxis benötigst.",
+    "strength3Title": "Freundliches Design für den Alltag",
+    "strength3Body": "Einfache, helle Benutzeroberfläche, die auch in einer belebten Klinik leicht zu bedienen ist. Wir entwickeln Apps, die nahtlos in das tägliche Leben passen — von der Gesundheitsversorgung bis zum Spiel."
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Schreib uns gerne",
+    "lead": "Wir freuen uns über Feedback, Fehlerberichte, Anfragen und Fragen zur Entwicklung von Gesundheits-Apps. Kontaktiere uns jederzeit.",
+    "button": "✉️ E-Mail senden"
+  },
+  "footer": {
+    "copyright": "© 2024 HOKU Design"
+  },
+  "appDetail": {
+    "breadcrumbHome": "Startseite",
+    "breadcrumbApps": "Apps",
+    "overview": "Übersicht",
+    "features": "Hauptfunktionen",
+    "forYou": "Für wen ist es?",
+    "requirements": "Anforderungen",
+    "os": "Betriebssystem",
+    "version": "Version",
+    "category": "Kategorie",
+    "languages": "Sprachen",
+    "pricing": "Preis",
+    "availability": "Verfügbarkeit",
+    "availabilityReleased": "Im App Store verfügbar",
+    "availabilityReview": "In Prüfung — Demnächst verfügbar",
+    "moreApps": "Weitere Apps",
+    "backToTop": "← Zurück nach oben",
+    "viewOnAppStore": "Im App Store ansehen",
+    "viewOnGooglePlay": "Bei Google Play ansehen",
+    "latestOsNote": "Die neueste unterstützte OS-Version findest du auf der App Store-Seite."
+  },
+  "categories": {
+    "medical": "Medizin",
+    "lifestyle": "Lifestyle",
+    "game": "Spiel"
+  }
+}

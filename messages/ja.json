@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "siteName": "HOKU Design",
+    "siteTitle": "HOKU Design | 臨床の視点で作るアプリ",
+    "siteDescription": "HOKU Design は、元看護師の代表と理学療法士の開発者が二人で運営するアプリスタジオです。医療・ライフスタイル・ゲームのアプリを公開しています。"
+  },
+  "nav": {
+    "apps": "アプリ",
+    "tools": "ツール",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "HOKU — ハワイ語で「星」",
+    "line1": "臨床の現場から、",
+    "line2": "星のように",
+    "line3": "寄り添う",
+    "line4": "アプリを。",
+    "lead": "HOKU Design は、看護師と理学療法士の二人でつくる小さなアプリスタジオ。医療の現場で役立つツールから、毎日を楽しくするゲームまで、ひとつひとつ丁寧に届けています。",
+    "cta": "アプリを見る",
+    "ctaAbout": "HOKU Design について"
+  },
+  "stats": {
+    "apps": "公開アプリ",
+    "platforms": "対応プラットフォーム",
+    "categories": "カテゴリ",
+    "since": "活動開始"
+  },
+  "appsSection": {
+    "eyebrow": "Apps",
+    "title": "アプリ一覧",
+    "lead": "医療・ライフスタイル・ゲーム。現場の課題と日々の楽しさから生まれたアプリたちです。",
+    "viewOnAppStore": "App Store で見る",
+    "viewOnGooglePlay": "Google Play で見る",
+    "comingSoon": "審査中 — 近日公開"
+  },
+  "about": {
+    "eyebrow": "About",
+    "titlePart1": "看護師と",
+    "titlePart2": "理学療法士が、",
+    "titlePart3": "二人でつくるアプリ",
+    "lead": "HOKU Design は、元看護師の妻が代表を務め、理学療法士の夫が開発を担当する二人のアプリスタジオです。看護とリハビリ、医療現場の二つの視点が合わさることで、現場で本当に使えるツールが生まれると考えています。",
+    "ceoRole": "代表",
+    "ceoTitle": "元看護師",
+    "ceoView": "看護の視点",
+    "devRole": "開発",
+    "devTitle": "理学療法士",
+    "devView": "リハビリの視点",
+    "strength1Title": "現場を知る二人の視点",
+    "strength1Body": "看護とリハビリ、それぞれの現場で患者さんと向き合ってきた二人。だからこそ気づける「こんなツールがあれば」を、そのままかたちにしています。",
+    "strength2Title": "根拠にもとづく設計",
+    "strength2Body": "評価方法や統計手法は、臨床・研究のスタンダードに沿って実装。現場で安心して使える正確さを大切にしています。",
+    "strength3Title": "毎日にやさしいデザイン",
+    "strength3Body": "忙しい現場でも迷わない、シンプルで明るいUI。医療から遊びまで、使う人の毎日に寄り添うアプリを届けます。"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "お気軽にお問い合わせください",
+    "lead": "アプリへのご意見・ご要望、不具合のご報告、医療現場向けアプリ開発のご相談など、なんでもお寄せください。",
+    "button": "✉️ メールで問い合わせる"
+  },
+  "footer": {
+    "copyright": "© 2024 HOKU Design"
+  },
+  "appDetail": {
+    "breadcrumbHome": "ホーム",
+    "breadcrumbApps": "アプリ",
+    "overview": "概要",
+    "features": "主な機能",
+    "forYou": "こんな方におすすめ",
+    "requirements": "対応環境",
+    "os": "対応OS",
+    "version": "バージョン",
+    "category": "カテゴリ",
+    "languages": "対応言語",
+    "pricing": "料金",
+    "availability": "提供状況",
+    "availabilityReleased": "App Store で公開中",
+    "availabilityReview": "審査中 — 近日公開",
+    "moreApps": "ほかのアプリ",
+    "backToTop": "← トップへ戻る",
+    "viewOnAppStore": "App Store で見る",
+    "viewOnGooglePlay": "Google Play で見る",
+    "latestOsNote": "最新の対応OSバージョンは App Store のページをご確認ください。"
+  },
+  "categories": {
+    "medical": "医療",
+    "lifestyle": "ライフスタイル",
+    "game": "ゲーム"
+  }
+}

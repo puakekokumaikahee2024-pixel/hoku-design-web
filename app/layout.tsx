@@ -15,7 +15,6 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-// 代表メッセージ（ハワイアンブロック）専用の装飾フォント
 const pacifico = Pacifico({
   variable: "--font-pacifico",
   weight: "400",
@@ -45,12 +44,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="ja"
       className={`${notoSansJP.variable} ${outfit.variable} ${pacifico.variable} ${kaiseiDecol.variable} h-full antialiased`}
-      // 下の inline script が描画前に data-motion を付けるため
       suppressHydrationWarning
     >
       <head>
-        {/* スクロール演出を有効にしてよい環境だけ印を付ける。印がなければ（JS なし・動きを減らす設定）
-            演出用の初期状態（非表示）は一切適用されず、最初から全部見える */}
         <script dangerouslySetInnerHTML={{ __html: MOTION_SCRIPT }} />
       </head>
       <body className="min-h-full flex flex-col bg-white font-sans text-slate-800 dark:bg-night-950 dark:text-slate-100">

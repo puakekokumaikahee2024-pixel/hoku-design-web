@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "siteName": "HOKU Design",
+    "siteTitle": "HOKU Design | 源自臨床經驗的應用程式",
+    "siteDescription": "HOKU Design 是由一位前護理師與一位物理治療師共同經營的雙人應用程式工作室，發布醫療保健、生活風格及遊戲類應用程式。"
+  },
+  "nav": {
+    "apps": "應用程式",
+    "tools": "工具",
+    "about": "關於我們",
+    "contact": "聯絡"
+  },
+  "hero": {
+    "badge": "HOKU — 夏威夷語「星星」",
+    "line1": "從臨床第一線，",
+    "line2": "如繁星般",
+    "line3": "緊緊",
+    "line4": "相伴於您身旁。",
+    "lead": "HOKU Design 是由一位護理師與一位物理治療師共同創立的小型應用程式工作室。從幫助醫療專業人員的工具，到讓日常生活更美好的遊戲——每款應用程式都用心打造。",
+    "cta": "查看應用程式",
+    "ctaAbout": "關於 HOKU Design"
+  },
+  "stats": {
+    "apps": "已發布應用程式",
+    "platforms": "支援平台",
+    "categories": "類別",
+    "since": "成立年份"
+  },
+  "appsSection": {
+    "eyebrow": "Apps",
+    "title": "我們的應用程式",
+    "lead": "醫療保健、生活風格與遊戲。源自真實臨床挑戰與日常喜悅的應用程式。",
+    "viewOnAppStore": "在 App Store 查看",
+    "viewOnGooglePlay": "在 Google Play 查看",
+    "comingSoon": "審核中 — 即將推出"
+  },
+  "about": {
+    "eyebrow": "關於我們",
+    "titlePart1": "護理師與",
+    "titlePart2": "物理治療師，",
+    "titlePart3": "攜手打造應用程式",
+    "lead": "HOKU Design 是一個雙人應用程式工作室，由前護理師擔任執行長，物理治療師負責開發。我們相信，結合護理與復健的雙重視角，能打造出真正適用於臨床環境的工具。",
+    "ceoRole": "執行長",
+    "ceoTitle": "前護理師",
+    "ceoView": "護理視角",
+    "devRole": "開發者",
+    "devTitle": "物理治療師",
+    "devView": "復健視角",
+    "strength1Title": "來自實際工作的雙重視角",
+    "strength1Body": "我們都曾在護理與復健領域照護患者，因此能敏銳察覺真正缺乏的工具，並直接將這些洞察轉化為應用程式。",
+    "strength2Title": "實證為基礎的設計",
+    "strength2Body": "我們的評估方法與統計技術遵循臨床及研究標準，確保在實際執業中所需的精準度。",
+    "strength3Title": "親切的日常設計",
+    "strength3Body": "簡潔明亮的介面，即使在繁忙的診所中也能輕鬆上手。我們打造能融入人們日常生活的應用程式——從醫療保健到休閒娛樂。"
+  },
+  "contact": {
+    "eyebrow": "聯絡",
+    "title": "歡迎隨時聯絡我們",
+    "lead": "歡迎提供意見回饋、回報錯誤、提出需求，或諮詢醫療保健應用程式的開發事宜。隨時與我們聯絡。",
+    "button": "✉️ 傳送電子郵件"
+  },
+  "footer": {
+    "copyright": "© 2024 HOKU Design"
+  },
+  "appDetail": {
+    "breadcrumbHome": "首頁",
+    "breadcrumbApps": "應用程式",
+    "overview": "概述",
+    "features": "主要功能",
+    "forYou": "適合對象",
+    "requirements": "系統需求",
+    "os": "作業系統",
+    "version": "版本",
+    "category": "類別",
+    "languages": "語言",
+    "pricing": "價格",
+    "availability": "供應狀態",
+    "availabilityReleased": "App Store 已上架",
+    "availabilityReview": "審核中 — 即將推出",
+    "moreApps": "更多應用程式",
+    "backToTop": "← 返回頂部",
+    "viewOnAppStore": "在 App Store 查看",
+    "viewOnGooglePlay": "在 Google Play 查看",
+    "latestOsNote": "請至 App Store 頁面確認最新支援的作業系統版本。"
+  },
+  "categories": {
+    "medical": "醫療保健",
+    "lifestyle": "生活風格",
+    "game": "遊戲"
+  }
+}
