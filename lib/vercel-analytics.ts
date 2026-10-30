@@ -1,3 +1,5 @@
+import { cacheLife } from "next/cache";
+
 const BASE = "https://vercel.com/api/v1/web/insights";
 
 export type InsightStats = {
@@ -14,13 +16,14 @@ async function fetchInsights(
   const url = `${BASE}/${path}?projectId=${projectId}&period=30d`;
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}` },
-    next: { revalidate: 3600 },
   });
   if (!res.ok) throw new Error(`Vercel API error: ${res.status}`);
   return res.json() as Promise<Record<string, unknown>>;
 }
 
 export async function getAnalyticsStats(): Promise<InsightStats | null> {
+  "use cache";
+  cacheLife("hours");
   const token = process.env.HOKU_VERCEL_TOKEN;
   const projectId = process.env.HOKU_VERCEL_PROJECT_ID;
   if (!token || !projectId) return null;

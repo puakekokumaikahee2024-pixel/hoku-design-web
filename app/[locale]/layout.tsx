@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 
@@ -20,6 +20,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!routing.locales.includes(locale as typeof routing.locales[number])) {
     notFound();
   }
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   // Providing all messages to the client side
   const messages = await getMessages();

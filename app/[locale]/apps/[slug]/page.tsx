@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { APP_DETAILS, type PricePlan } from "@/lib/app-details";
 import { getLocalizedAppDetail } from "@/lib/app-details-i18n";
@@ -23,8 +23,6 @@ type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-export const revalidate = false;
-
 export function generateStaticParams() {
   return apps.flatMap((app) =>
     ["ja", "en", "es", "de", "zh-TW", "ko"].map((locale) => ({
@@ -36,6 +34,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug, locale } = await params;
+  setRequestLocale(locale);
   const app = getAppBySlug(slug);
   const detail = APP_DETAILS[slug];
   if (!app || !detail) return {};
@@ -61,6 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function AppPage({ params }: PageProps) {
   const { slug, locale } = await params;
+  setRequestLocale(locale);
   const app = getAppBySlug(slug);
   const detail = APP_DETAILS[slug];
   if (!app || !detail) notFound();

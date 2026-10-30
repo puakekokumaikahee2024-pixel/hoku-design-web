@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { apps, CATEGORY_LABELS } from "@/lib/apps";
 import { getAnalyticsStats, type InsightStats } from "@/lib/vercel-analytics";
 import { AppList } from "../components/AppList";
@@ -20,6 +20,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
     alternates: { canonical: "/" },
@@ -43,6 +44,8 @@ const STATS: { value: string; count?: number; unitKey: string; labelKey: string 
 const STRENGTH_KEYS = ["1", "2", "3"] as const;
 
 export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const analytics = await getAnalyticsStats();
   return (
     <div className="relative flex flex-1 flex-col overflow-x-clip">
