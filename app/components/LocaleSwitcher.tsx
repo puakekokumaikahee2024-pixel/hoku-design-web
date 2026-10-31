@@ -1,7 +1,8 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next-intl/navigation";
+import { routing } from "@/i18n/routing";
 import { useTransition } from "react";
 
 const LOCALES = [
@@ -21,31 +22,7 @@ export function LocaleSwitcher() {
 
   function onLocaleChange(newLocale: string) {
     startTransition(() => {
-      // Replace the current locale prefix in the pathname
-      const segments = pathname.split("/");
-      const localeList = ["ja", "en", "es", "de", "zh-TW", "ko"];
-
-      let newPath: string;
-      if (localeList.includes(segments[1])) {
-        // Replace existing locale segment
-        if (newLocale === "ja") {
-          // Japanese is the default: remove locale prefix
-          segments.splice(1, 1);
-          newPath = segments.join("/") || "/";
-        } else {
-          segments[1] = newLocale;
-          newPath = segments.join("/");
-        }
-      } else {
-        // No locale prefix currently (Japanese default)
-        if (newLocale === "ja") {
-          newPath = pathname;
-        } else {
-          newPath = `/${newLocale}${pathname}`;
-        }
-      }
-
-      router.push(newPath);
+      router.replace(pathname, { locale: newLocale as typeof routing.locales[number] });
     });
   }
 
