@@ -1,6 +1,4 @@
-import { cacheLife } from "next/cache";
-
-const BASE = "https://vercel.com/api/v1/web/insights";
+const BASE = "https://api.vercel.com/v1/query/web-analytics";
 
 export type InsightStats = {
   totalPageViews: number;
@@ -8,36 +6,48 @@ export type InsightStats = {
   countriesCount: number;
 };
 
-async function fetchInsights(
-  path: string,
-  projectId: string,
-  token: string,
-): Promise<Record<string, unknown>> {
-  const url = `${BASE}/${path}?projectId=${projectId}&period=30d`;
-  const res = await fetch(url, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  if (!res.ok) throw new Error(`Vercel API error: ${res.status}`);
-  return res.json() as Promise<Record<string, unknown>>;
-}
-
 export async function getAnalyticsStats(): Promise<InsightStats | null> {
-  "use cache";
-  cacheLife("hours");
   const token = process.env.HOKU_VERCEL_TOKEN;
   const projectId = process.env.HOKU_VERCEL_PROJECT_ID;
   if (!token || !projectId) return null;
+
+  // 過去30日
+  const until = new Date();
+  const since = new Date(until.getTime() - 30 * 24 * 60 * 60 * 1000);
+  const sinceStr = since.toISOString();
+  const untilStr = until.toISOString();
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
+  };
+
   try {
-    const [views, countries] = await Promise.all([
-      fetchInsights("pageviews", projectId, token),
-      fetchInsights("countries", projectId, token),
-    ]);
-    const totalPageViews =
-      typeof views.total === "number" ? views.total : 0;
-    const uniqueVisitors =
-      typeof views.uniques === "number" ? views.uniques : 0;
-    const countriesData = Array.isArray(countries.data) ? countries.data : [];
-    const countriesCount = countriesData.length;
+    // 合計PV・訪問者数
+    const countUrl = `${BASE}/visits/count?projectId=${encodeURIComponent(projectId)}&since=${encodeURIComponent(sinceStr)}&until=${encodeURIComponent(untilStr)}`;
+    const countRes = await fetch(countUrl, {
+      headers,
+      next: { revalidate: 3600 },
+    });
+    if (!countRes.ok) return null;
+    const countJson = (await countRes.json()) as {
+      data: { pageviews?: number; visitors?: number };
+    };
+    const totalPageViews = countJson.data?.pageviews ?? 0;
+    const uniqueVisitors = countJson.data?.visitors ?? 0;
+
+    // 国別（最大100件取得してユニーク国数をカウント）
+    const aggUrl = `${BASE}/visits/aggregate?projectId=${encodeURIComponent(projectId)}&by=${encodeURIComponent(JSON.stringify(["country"]))}&since=${encodeURIComponent(sinceStr)}&until=${encodeURIComponent(untilStr)}&limit=100`;
+    const aggRes = await fetch(aggUrl, {
+      headers,
+      next: { revalidate: 3600 },
+    });
+    let countriesCount = 0;
+    if (aggRes.ok) {
+      const aggJson = (await aggRes.json()) as { data: unknown[] };
+      countriesCount = Array.isArray(aggJson.data) ? aggJson.data.length : 0;
+    }
+
     return { totalPageViews, uniqueVisitors, countriesCount };
   } catch {
     return null;
