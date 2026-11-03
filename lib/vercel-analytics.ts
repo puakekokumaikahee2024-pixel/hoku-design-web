@@ -15,7 +15,10 @@ export async function getAnalyticsStats(): Promise<InsightStats | null> {
 
   const token = process.env.HOKU_VERCEL_TOKEN;
   const projectId = process.env.HOKU_VERCEL_PROJECT_ID;
-  if (!token || !projectId) return null;
+  if (!token || !projectId) {
+    console.log("[analytics] token or projectId missing");
+    return null;
+  }
 
   const headers = {
     Authorization: `Bearer ${token}`,
@@ -35,7 +38,11 @@ export async function getAnalyticsStats(): Promise<InsightStats | null> {
       `&until=${encodeURIComponent(untilStr)}`;
 
     const countRes = await fetch(countUrl, { headers });
-    if (!countRes.ok) return null;
+    console.log("[analytics] countRes.status:", countRes.status);
+    if (!countRes.ok) {
+      console.log("[analytics] countRes error:", await countRes.text());
+      return null;
+    }
 
     const countJson = (await countRes.json()) as {
       data: { pageviews?: number; visitors?: number };
@@ -51,15 +58,22 @@ export async function getAnalyticsStats(): Promise<InsightStats | null> {
       `&until=${encodeURIComponent(untilStr)}` +
       `&limit=100`;
 
+    console.log("[analytics] aggUrl:", aggUrl.replace(projectId, "***"));
     const aggRes = await fetch(aggUrl, { headers });
+    console.log("[analytics] aggRes.status:", aggRes.status);
+
     let countriesCount = 0;
     if (aggRes.ok) {
-      const aggJson = (await aggRes.json()) as { data: unknown[] };
+      const aggJson = (await aggRes.json()) as { data: unknown };
+      console.log("[analytics] aggJson:", JSON.stringify(aggJson).slice(0, 500));
       countriesCount = Array.isArray(aggJson.data) ? aggJson.data.length : 0;
+    } else {
+      console.log("[analytics] aggRes error:", await aggRes.text());
     }
 
     return { totalPageViews, uniqueVisitors, countriesCount };
-  } catch {
+  } catch (e) {
+    console.log("[analytics] exception:", e);
     return null;
   }
 }
