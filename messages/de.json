@@ -96,5 +96,23 @@
     "medical": "Medizin",
     "lifestyle": "Lifestyle",
     "game": "Spiel"
+  },
+  "contactPage": {
+    "eyebrow": "Kontakt",
+    "title": "Schreib uns gerne",
+    "lead": "Wir freuen uns über Feedback, Fehlerberichte und Fragen zur App-Entwicklung. Wir antworten in der Regel innerhalb von 2–3 Werktagen.",
+    "labelName": "Name",
+    "placeholderName": "Max Mustermann",
+    "labelEmail": "E-Mail",
+    "placeholderEmail": "deine@email.com",
+    "labelSubject": "Betreff",
+    "placeholderSubject": "Frage zu einer App",
+    "labelMessage": "Nachricht",
+    "placeholderMessage": "Schreibe deine Nachricht hier",
+    "submit": "✉️ Absenden",
+    "submitting": "Wird gesendet…",
+    "successTitle": "Nachricht gesendet!",
+    "successBody": "Danke für deine Nachricht. Wir antworten in der Regel innerhalb von 2–3 Werktagen.",
+    "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
   }
 }

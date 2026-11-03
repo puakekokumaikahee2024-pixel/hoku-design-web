@@ -96,5 +96,23 @@
     "medical": "Medical",
     "lifestyle": "Lifestyle",
     "game": "Game"
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Feel Free to Reach Out",
+    "lead": "We welcome feedback, bug reports, requests, and inquiries about healthcare app development. We usually reply within 2–3 business days.",
+    "labelName": "Name",
+    "placeholderName": "Jane Doe",
+    "labelEmail": "Email",
+    "placeholderEmail": "your@email.com",
+    "labelSubject": "Subject",
+    "placeholderSubject": "Question about an app",
+    "labelMessage": "Message",
+    "placeholderMessage": "Write your message here",
+    "submit": "✉️ Send Message",
+    "submitting": "Sending…",
+    "successTitle": "Message Sent!",
+    "successBody": "Thanks for reaching out. We'll get back to you within 2–3 business days.",
+    "errorGeneric": "Something went wrong. Please try again later."
   }
 }

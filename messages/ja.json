@@ -96,5 +96,23 @@
     "medical": "医療",
     "lifestyle": "ライフスタイル",
     "game": "ゲーム"
+  },
+  "contactPage": {
+    "eyebrow": "お問い合わせ",
+    "title": "お気軽にお問い合わせください",
+    "lead": "アプリへのご意見・ご要望、不具合のご報告、医療現場向けアプリ開発のご相談など、なんでもお寄せください。通常2〜3営業日以内にご返信いたします。",
+    "labelName": "お名前",
+    "placeholderName": "山田 太郎",
+    "labelEmail": "メールアドレス",
+    "placeholderEmail": "your@email.com",
+    "labelSubject": "件名",
+    "placeholderSubject": "アプリについての質問",
+    "labelMessage": "メッセージ",
+    "placeholderMessage": "お問い合わせ内容をご記入ください",
+    "submit": "✉️ 送信する",
+    "submitting": "送信中…",
+    "successTitle": "送信しました！",
+    "successBody": "お問い合わせありがとうございます。通常2〜3営業日以内にご返信いたします。",
+    "errorGeneric": "送信に失敗しました。時間をおいてもう一度お試しください。"
   }
 }

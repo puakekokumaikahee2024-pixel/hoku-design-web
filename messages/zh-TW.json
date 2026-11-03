@@ -96,5 +96,23 @@
     "medical": "醫療保健",
     "lifestyle": "生活風格",
     "game": "遊戲"
+  },
+  "contactPage": {
+    "eyebrow": "聯絡",
+    "title": "歡迎隨時聯絡我們",
+    "lead": "歡迎提供意見、回報錯誤或諮詢應用程式開發事宜。我們通常在 2–3 個工作天內回覆。",
+    "labelName": "姓名",
+    "placeholderName": "王小明",
+    "labelEmail": "電子郵件",
+    "placeholderEmail": "your@email.com",
+    "labelSubject": "主旨",
+    "placeholderSubject": "關於應用程式的問題",
+    "labelMessage": "訊息內容",
+    "placeholderMessage": "請在此輸入您的訊息",
+    "submit": "✉️ 傳送訊息",
+    "submitting": "傳送中…",
+    "successTitle": "傳送成功！",
+    "successBody": "感謝您的來信，我們通常在 2–3 個工作天內回覆。",
+    "errorGeneric": "發生錯誤，請稍後再試。"
   }
 }

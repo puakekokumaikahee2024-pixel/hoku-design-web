@@ -96,5 +96,23 @@
     "medical": "Salud",
     "lifestyle": "Estilo de vida",
     "game": "Juego"
+  },
+  "contactPage": {
+    "eyebrow": "Contacto",
+    "title": "No dudes en escribirnos",
+    "lead": "Aceptamos comentarios, informes de errores y consultas sobre desarrollo de apps. Solemos responder en 2–3 días hábiles.",
+    "labelName": "Nombre",
+    "placeholderName": "Juan García",
+    "labelEmail": "Correo electrónico",
+    "placeholderEmail": "tu@email.com",
+    "labelSubject": "Asunto",
+    "placeholderSubject": "Pregunta sobre una app",
+    "labelMessage": "Mensaje",
+    "placeholderMessage": "Escribe tu mensaje aquí",
+    "submit": "✉️ Enviar mensaje",
+    "submitting": "Enviando…",
+    "successTitle": "¡Mensaje enviado!",
+    "successBody": "Gracias por contactarnos. Te responderemos en 2–3 días hábiles.",
+    "errorGeneric": "Algo salió mal. Por favor, inténtalo más tarde."
   }
 }
