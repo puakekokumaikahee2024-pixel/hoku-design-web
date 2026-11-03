@@ -5,7 +5,9 @@ import { useTranslations, useLocale } from "next-intl";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
 import { Hibiscus } from "../../components/Decorations";
-import { submitContact } from "./actions";
+
+// Web3Forms public key — safe to expose on the client side per Web3Forms docs
+const WEB3FORMS_KEY = "0b4ea0de-4736-4c91-89db-f7bd09bfe8b8";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -21,16 +23,31 @@ export default function ContactPage() {
     setErrorMsg("");
 
     const form = e.currentTarget;
-    const formData = new FormData(form);
-    formData.append("locale", locale);
+    const data = {
+      access_key: WEB3FORMS_KEY,
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      locale,
+    };
 
-    const result = await submitContact(formData);
-    if (result.success) {
-      setStatus("success");
-      form.reset();
-    } else {
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        throw new Error(json.message ?? "Unknown error");
+      }
+    } catch (err) {
       setStatus("error");
-      setErrorMsg(result.error ?? "");
+      setErrorMsg(err instanceof Error ? err.message : String(err));
     }
   }
 
