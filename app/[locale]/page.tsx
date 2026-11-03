@@ -8,6 +8,7 @@ import { getAnalyticsStats, type InsightStats } from "@/lib/vercel-analytics";
 import { AppList } from "../components/AppList";
 import { CeoMessage } from "../components/CeoMessage";
 import { Constellation } from "../components/Constellation";
+import { CountryStrip } from "../components/CountryStrip";
 import { HeroCanvas } from "../components/HeroCanvas";
 import { ParallaxHero } from "../components/ParallaxHero";
 import { Hibiscus, PalmFrond, Waves } from "../components/Decorations";
@@ -173,6 +174,7 @@ function StatsBar({ analytics }: { analytics: InsightStats | null }) {
           </div>
         ))}
       </dl>
+      {analytics && <CountryStrip countries={analytics.countries} />}
     </section>
   );
 }

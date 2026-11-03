@@ -4,10 +4,18 @@ import { cacheLife } from "next/cache";
 
 const BASE = "https://api.vercel.com/v1/query/web-analytics";
 
+export type CountryStat = {
+  /** ISO 3166-1 alpha-2 の国コード (例: "JP") */
+  code: string;
+  visitors: number;
+  pageviews: number;
+};
+
 export type InsightStats = {
   totalPageViews: number;
   uniqueVisitors: number;
   countriesCount: number;
+  countries: CountryStat[];
 };
 
 function ymd(d: Date): string {
@@ -45,7 +53,7 @@ export async function getAnalyticsStats(): Promise<InsightStats | null> {
     // --- 国別の内訳 ---
     // by は JSON 配列ではなく素の文字列 ("country") を渡す。
     // Hobby プランは集計の参照期間が短いため、30日 → 7日 → 1日 の順に試す。
-    let countriesCount = 0;
+    let countries: CountryStat[] = [];
 
     for (const days of [30, 7, 1]) {
       const since = new Date(until.getTime() - days * 24 * 60 * 60 * 1000);
@@ -62,13 +70,33 @@ export async function getAnalyticsStats(): Promise<InsightStats | null> {
       if (!aggRes.ok) continue;
 
       const aggJson = (await aggRes.json()) as { data?: unknown };
-      if (Array.isArray(aggJson.data)) {
-        countriesCount = aggJson.data.length;
-        break;
-      }
+      if (!Array.isArray(aggJson.data)) continue;
+
+      const rows = aggJson.data as Array<{
+        country?: unknown;
+        visitors?: unknown;
+        pageviews?: unknown;
+      }>;
+
+      countries = rows
+        .map((row) => ({
+          code: typeof row.country === "string" ? row.country.toUpperCase() : "",
+          visitors: typeof row.visitors === "number" ? row.visitors : 0,
+          pageviews: typeof row.pageviews === "number" ? row.pageviews : 0,
+        }))
+        // "Others" など国コードでない行は除外する
+        .filter((row) => /^[A-Z]{2}$/.test(row.code))
+        .sort((a, b) => b.visitors - a.visitors || b.pageviews - a.pageviews);
+
+      if (countries.length > 0) break;
     }
 
-    return { totalPageViews, uniqueVisitors, countriesCount };
+    return {
+      totalPageViews,
+      uniqueVisitors,
+      countriesCount: countries.length,
+      countries,
+    };
   } catch {
     return null;
   }
