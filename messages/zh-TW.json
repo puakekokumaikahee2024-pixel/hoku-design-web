@@ -37,6 +37,12 @@
     "viewOnGooglePlay": "在 Google Play 查看",
     "comingSoon": "審核中 — 即將推出"
   },
+  "hokuIslands": {
+    "eyebrow": "網路服務",
+    "title": "Hoku Islands",
+    "lead": "夏威夷旅客分享照片與體驗的社群地圖服務。在3D地圖上探索各島的景點。",
+    "cta": "前往服務"
+  },
   "about": {
     "eyebrow": "關於我們",
     "titlePart1": "護理師與",

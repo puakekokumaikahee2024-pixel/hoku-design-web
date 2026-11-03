@@ -37,6 +37,12 @@
     "viewOnGooglePlay": "View on Google Play",
     "comingSoon": "Under Review — Coming Soon"
   },
+  "hokuIslands": {
+    "eyebrow": "Web Service",
+    "title": "Hoku Islands",
+    "lead": "A community map where Hawaii travelers share photos and experiences. Explore spots across the islands on a 3D map.",
+    "cta": "Visit Service"
+  },
   "about": {
     "eyebrow": "About",
     "titlePart1": "A Nurse and a",

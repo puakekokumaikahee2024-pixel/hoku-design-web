@@ -37,6 +37,12 @@
     "viewOnGooglePlay": "Google Play で見る",
     "comingSoon": "審査中 — 近日公開"
   },
+  "hokuIslands": {
+    "eyebrow": "Web Service",
+    "title": "Hoku Islands",
+    "lead": "ハワイ旅行者が写真・体験を投稿・共有するコミュニティ地図サービス。島ごとのスポットを3Dマップで探せます。",
+    "cta": "サービスを見る"
+  },
   "about": {
     "eyebrow": "About",
     "titlePart1": "看護師と",

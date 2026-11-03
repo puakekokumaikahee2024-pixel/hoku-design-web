@@ -11,7 +11,7 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "badge": "HOKU — „Stern“ auf Hawaiianisch",
+    "badge": "HOKU — „Stern" auf Hawaiianisch",
     "line1": "Von der klinischen Front,",
     "line2": "wie ein Stern",
     "line3": "bleiben wir",
@@ -36,6 +36,12 @@
     "viewOnAppStore": "Im App Store ansehen",
     "viewOnGooglePlay": "Bei Google Play ansehen",
     "comingSoon": "In Prüfung — Demnächst verfügbar"
+  },
+  "hokuIslands": {
+    "eyebrow": "Web-Service",
+    "title": "Hoku Islands",
+    "lead": "Eine Community-Karte, auf der Hawaii-Reisende Fotos und Erlebnisse teilen. Entdecken Sie Spots auf einer 3D-Karte.",
+    "cta": "Service besuchen"
   },
   "about": {
     "eyebrow": "Über uns",

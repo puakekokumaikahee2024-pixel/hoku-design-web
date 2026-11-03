@@ -37,6 +37,12 @@
     "viewOnGooglePlay": "Google Play에서 보기",
     "comingSoon": "심사 중 — 곧 출시"
   },
+  "hokuIslands": {
+    "eyebrow": "웹 서비스",
+    "title": "Hoku Islands",
+    "lead": "하와이 여행자들이 사진과 경험을 공유하는 커뮤니티 지도 서비스. 3D 지도로 각 섬의 스팟을 탐색하세요.",
+    "cta": "서비스 방문"
+  },
   "about": {
     "eyebrow": "소개",
     "titlePart1": "간호사와",

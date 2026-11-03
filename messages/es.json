@@ -37,6 +37,12 @@
     "viewOnGooglePlay": "Ver en Google Play",
     "comingSoon": "En revisión — Próximamente"
   },
+  "hokuIslands": {
+    "eyebrow": "Servicio Web",
+    "title": "Hoku Islands",
+    "lead": "Un mapa comunitario donde los viajeros de Hawái comparten fotos y experiencias. Explora los lugares en un mapa 3D.",
+    "cta": "Ver Servicio"
+  },
   "about": {
     "eyebrow": "Nosotros",
     "titlePart1": "Una enfermera y",

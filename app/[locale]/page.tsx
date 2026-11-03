@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import { apps, CATEGORY_LABELS } from "@/lib/apps";
 import { getAnalyticsStats, type InsightStats } from "@/lib/vercel-analytics";
 import { AppList } from "../components/AppList";
@@ -53,6 +54,7 @@ export default async function Home({ params }: Props) {
       <main className="flex-1">
         <Hero />
         <StatsBar analytics={analytics} />
+        <HokuIslandsSpotlight />
         <AppsSection />
         <About />
         <Contact />
@@ -171,6 +173,82 @@ function StatsBar({ analytics }: { analytics: InsightStats | null }) {
           </div>
         ))}
       </dl>
+    </section>
+  );
+}
+
+function HokuIslandsSpotlight() {
+  const t = useTranslations("hokuIslands");
+  return (
+    <section className="px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-6xl">
+        <div
+          data-reveal="fade"
+          className="relative isolate overflow-hidden rounded-[2rem] bg-linear-135 from-[#0abfbc]/10 via-cyan-50 to-orange-50/60 ring-1 ring-[#0abfbc]/20 dark:from-[#0abfbc]/10 dark:via-night-900 dark:to-night-800 dark:ring-[#0abfbc]/15"
+        >
+          {/* 背景デコレーション */}
+          <div
+            aria-hidden
+            className="absolute -top-20 -right-20 -z-10 size-72 rounded-full bg-[#0abfbc]/20 blur-3xl dark:bg-[#0abfbc]/10"
+          />
+          <div
+            aria-hidden
+            className="absolute -bottom-16 -left-16 -z-10 size-56 rounded-full bg-sunset/20 blur-3xl dark:bg-sunset/10"
+          />
+
+          <div className="grid items-center gap-0 md:grid-cols-[1fr_1.1fr]">
+            {/* 画像 */}
+            <div className="relative h-56 overflow-hidden rounded-t-[2rem] md:h-full md:min-h-72 md:rounded-l-[2rem] md:rounded-tr-none">
+              <Image
+                src="/hoku-islands-hero.png"
+                alt="Hoku Islands — ハワイ旅行者向けスポット共有マップ"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent to-[#0abfbc]/10 md:bg-linear-to-l" />
+            </div>
+
+            {/* テキスト */}
+            <div className="px-8 py-10 sm:px-10 sm:py-12">
+              <p className="font-display text-xs font-semibold tracking-[0.25em] text-[#0abfbc] uppercase">
+                {t("eyebrow")}
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+                {t("title")}
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-slate-300">
+                {t("lead")}
+              </p>
+
+              {/* Tech badges */}
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["Next.js", "Supabase", "Mapbox"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-200 dark:bg-night-800/80 dark:text-slate-300 dark:ring-night-700"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <a
+                href="https://hoku-islands.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0abfbc] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0abfbc]/30 transition hover:bg-[#08a8a5] hover:shadow-xl"
+              >
+                {t("cta")}
+                <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
