@@ -132,7 +132,7 @@ function Hero() {
 function StatsBar({ analytics }: { analytics: InsightStats | null }) {
   const t = useTranslations("stats");
   const colsClass = analytics
-    ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
+    ? "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7"
     : "grid-cols-2 md:grid-cols-4";
   const analyticsStats = analytics
     ? [
