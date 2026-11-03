@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
@@ -27,8 +26,8 @@ export async function GET() {
   });
 
   const text = await res.text();
-  return NextResponse.json({
-    status: res.status,
-    body: JSON.parse(text),
-  });
+  let body;
+  try { body = JSON.parse(text); } catch { body = text; }
+
+  return NextResponse.json({ status: res.status, body });
 }
