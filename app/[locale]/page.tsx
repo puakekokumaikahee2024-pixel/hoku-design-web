@@ -183,7 +183,6 @@ function HokuIslandsSpotlight() {
     <section className="px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div
-          data-reveal="fade"
           className="relative isolate overflow-hidden rounded-[2rem] bg-linear-135 from-[#0abfbc]/10 via-cyan-50 to-orange-50/60 ring-1 ring-[#0abfbc]/20 dark:from-[#0abfbc]/10 dark:via-night-900 dark:to-night-800 dark:ring-[#0abfbc]/15"
         >
           {/* 背景デコレーション */}
