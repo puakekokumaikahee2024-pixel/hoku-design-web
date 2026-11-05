@@ -345,21 +345,11 @@ function About() {
           lead={t("lead")}
         />
         <div data-reveal className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
-          {[
-            { role: t("ceoRole"), title: t("ceoTitle"), view: t("ceoView") },
-            { role: t("devRole"), title: t("devTitle"), view: t("devView") },
-          ].map((member, i) => (
-            <div key={member.role} className="contents">
-              {i > 0 && (
-                <span aria-hidden className="font-display text-2xl font-light text-sunset">×</span>
-              )}
-              <div className="rounded-2xl bg-white/80 px-5 py-3 text-center ring-1 ring-white backdrop-blur dark:bg-night-950/60 dark:ring-night-700">
-                <p className="text-xs text-slate-500 dark:text-slate-400">{member.role}</p>
-                <p className="mt-0.5 font-bold text-slate-900 dark:text-white">{member.title}</p>
-                <p className="mt-0.5 text-xs font-medium text-turquoise">{member.view}</p>
-              </div>
-            </div>
-          ))}
+          <div className="rounded-2xl bg-white/80 px-5 py-3 text-center ring-1 ring-white backdrop-blur dark:bg-night-950/60 dark:ring-night-700">
+            <p className="text-xs text-slate-500 dark:text-slate-400">{t("ceoRole")}</p>
+            <p className="mt-0.5 font-bold text-slate-900 dark:text-white">{t("ceoTitle")}</p>
+            <p className="mt-0.5 text-xs font-medium text-turquoise">{t("ceoView")}</p>
+          </div>
         </div>
         <CeoMessage />
         <ul className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
