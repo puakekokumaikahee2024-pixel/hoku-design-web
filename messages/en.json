@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "HOKU Design",
     "siteTitle": "HOKU Design | Apps Built from Clinical Experience",
-    "siteDescription": "HOKU Design is a two-person app studio run by a former nurse and a physical therapist. We publish apps for healthcare, lifestyle, and games."
+    "siteDescription": "HOKU Design is an app studio run by a former nurse. We publish apps for healthcare, lifestyle, and games."
   },
   "nav": {
     "apps": "Apps",
@@ -16,7 +16,7 @@
     "line2": "like a star",
     "line3": "we stay",
     "line4": "close to you.",
-    "lead": "HOKU Design is a small app studio created by a nurse and a physical therapist. From tools that help healthcare professionals to games that brighten everyday life — each app is made with care.",
+    "lead": "HOKU Design is a small app studio run by a former nurse. Creating what doesn't exist yet — from healthcare to games, each app is made with care.",
     "cta": "View Apps",
     "ctaAbout": "About HOKU Design"
   },
@@ -45,18 +45,18 @@
   },
   "about": {
     "eyebrow": "About",
-    "titlePart1": "A Nurse and a",
-    "titlePart2": "Physical Therapist",
-    "titlePart3": "Building Apps Together",
-    "lead": "HOKU Design is a two-person app studio led by a former nurse (CEO) and developed by a physical therapist. We believe that combining the perspectives of nursing and rehabilitation creates tools that truly work in real clinical settings.",
+    "titlePart1": "Creating",
+    "titlePart2": "what doesn't exist yet.",
+    "titlePart3": "",
+    "lead": "HOKU Design is an app studio run by a former nurse. Guided by a healthcare professional's perspective and a passion for thoughtful design, we build apps that have never existed before.",
     "ceoRole": "CEO",
     "ceoTitle": "Former Nurse",
-    "ceoView": "Nursing Perspective",
+    "ceoView": "Healthcare Perspective",
     "devRole": "Developer",
     "devTitle": "Physical Therapist",
     "devView": "Rehabilitation Perspective",
-    "strength1Title": "Two Perspectives from the Field",
-    "strength1Body": "Having both worked with patients in nursing and rehabilitation, we notice the tools that are truly missing. We turn those insights directly into apps.",
+    "strength1Title": "A Healthcare Professional's Perspective",
+    "strength1Body": "Years of working with patients as a nurse revealed tools that simply didn't exist. We turn those insights directly into apps.",
     "strength2Title": "Evidence-Based Design",
     "strength2Body": "Our assessment methods and statistical techniques follow clinical and research standards, ensuring accuracy you can rely on in real practice.",
     "strength3Title": "Gentle Design for Daily Use",

@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "HOKU Design",
     "siteTitle": "HOKU Design | Apps Creadas desde la Experiencia Clínica",
-    "siteDescription": "HOKU Design es un estudio de dos personas formado por una exenfermera y un fisioterapeuta. Publicamos apps para el ámbito sanitario, el estilo de vida y los juegos."
+    "siteDescription": "HOKU Design es un estudio de apps dirigido por una exenfermera. Publicamos apps para el ámbito sanitario, el estilo de vida y los juegos."
   },
   "nav": {
     "apps": "Apps",
@@ -16,7 +16,7 @@
     "line2": "como una estrella",
     "line3": "permanecemos",
     "line4": "a tu lado.",
-    "lead": "HOKU Design es un pequeño estudio de apps creado por una enfermera y un fisioterapeuta. Desde herramientas para profesionales sanitarios hasta juegos que alegran el día a día — cada app está hecha con cuidado.",
+    "lead": "HOKU Design es un pequeño estudio de apps dirigido por una exenfermera. Creamos lo que aún no existe — desde salud hasta juegos, cada app hecha con cuidado.",
     "cta": "Ver Apps",
     "ctaAbout": "Sobre HOKU Design"
   },
@@ -45,18 +45,18 @@
   },
   "about": {
     "eyebrow": "Nosotros",
-    "titlePart1": "Una enfermera y",
-    "titlePart2": "un fisioterapeuta",
-    "titlePart3": "creando apps juntos",
-    "lead": "HOKU Design es un estudio de dos personas dirigido por una exenfermera (CEO) y desarrollado por un fisioterapeuta. Creemos que combinar las perspectivas de enfermería y rehabilitación genera herramientas que realmente funcionan en entornos clínicos reales.",
+    "titlePart1": "Creando",
+    "titlePart2": "lo que aún no existe.",
+    "titlePart3": "",
+    "lead": "HOKU Design es un estudio de apps dirigido por una exenfermera. Con la perspectiva de una profesional sanitaria y un diseño cuidado, creamos apps que nunca habían existido.",
     "ceoRole": "CEO",
     "ceoTitle": "Exenfermera",
-    "ceoView": "Perspectiva de Enfermería",
+    "ceoView": "Perspectiva Sanitaria",
     "devRole": "Desarrollador",
     "devTitle": "Fisioterapeuta",
     "devView": "Perspectiva de Rehabilitación",
-    "strength1Title": "Dos perspectivas del terreno",
-    "strength1Body": "Ambos hemos trabajado con pacientes en enfermería y rehabilitación. Por eso identificamos las herramientas que realmente hacen falta y las convertimos en apps.",
+    "strength1Title": "La perspectiva de una profesional sanitaria",
+    "strength1Body": "Años de trabajo con pacientes como enfermera revelaron herramientas que simplemente no existían. Convertimos esas experiencias directamente en apps.",
     "strength2Title": "Diseño basado en evidencia",
     "strength2Body": "Nuestros métodos de evaluación y técnicas estadísticas siguen los estándares clínicos e investigadores, garantizando la precisión que necesitas en la práctica real.",
     "strength3Title": "Diseño amable para el día a día",

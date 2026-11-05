@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "HOKU Design",
     "siteTitle": "HOKU Design | Apps aus klinischer Erfahrung",
-    "siteDescription": "HOKU Design ist ein Zwei-Personen-App-Studio, bestehend aus einer ehemaligen Krankenschwester und einem Physiotherapeuten. Wir veröffentlichen Apps für Gesundheitswesen, Lifestyle und Spiele."
+    "siteDescription": "HOKU Design ist ein App-Studio, das von einer ehemaligen Krankenschwester geführt wird. Wir veröffentlichen Apps für Gesundheitswesen, Lifestyle und Spiele."
   },
   "nav": {
     "apps": "Apps",
@@ -16,7 +16,7 @@
     "line2": "wie ein Stern",
     "line3": "bleiben wir",
     "line4": "an deiner Seite.",
-    "lead": "HOKU Design ist ein kleines App-Studio, gegründet von einer Krankenschwester und einem Physiotherapeuten. Von Werkzeugen für medizinisches Fachpersonal bis hin zu Spielen, die den Alltag bereichern — jede App wird mit Sorgfalt entwickelt.",
+    "lead": "HOKU Design ist ein kleines App-Studio, geführt von einer ehemaligen Krankenschwester. Wir erschaffen, was es noch nicht gibt — von Gesundheits-Apps bis hin zu Spielen, jede App mit Sorgfalt entwickelt.",
     "cta": "Apps ansehen",
     "ctaAbout": "Über HOKU Design"
   },
@@ -45,18 +45,18 @@
   },
   "about": {
     "eyebrow": "Über uns",
-    "titlePart1": "Eine Krankenschwester",
-    "titlePart2": "und ein Physiotherapeut",
-    "titlePart3": "entwickeln Apps gemeinsam",
-    "lead": "HOKU Design ist ein Zwei-Personen-Studio unter der Leitung einer ehemaligen Krankenschwester (CEO) und entwickelt von einem Physiotherapeuten. Wir glauben, dass die Kombination aus Pflege- und Rehabilitationsperspektive Tools entstehen lässt, die wirklich im klinischen Alltag funktionieren.",
+    "titlePart1": "Erschaffen,",
+    "titlePart2": "was es noch nicht gibt.",
+    "titlePart3": "",
+    "lead": "HOKU Design ist ein App-Studio unter der Leitung einer ehemaligen Krankenschwester. Mit dem Blick einer medizinischen Fachkraft und dem Anspruch an durchdachtes Design entstehen Apps, die es so noch nicht gab.",
     "ceoRole": "CEO",
     "ceoTitle": "Ehemalige Krankenschwester",
-    "ceoView": "Pflegeperspektive",
+    "ceoView": "Perspektive aus dem Gesundheitswesen",
     "devRole": "Entwickler",
     "devTitle": "Physiotherapeut",
     "devView": "Rehabilitationsperspektive",
-    "strength1Title": "Zwei Perspektiven aus der Praxis",
-    "strength1Body": "Wir haben beide mit Patienten in der Pflege und Rehabilitation gearbeitet. Deshalb erkennen wir die Werkzeuge, die wirklich fehlen, und verwandeln diese Erkenntnisse direkt in Apps.",
+    "strength1Title": "Perspektive aus dem Gesundheitswesen",
+    "strength1Body": "Jahre der Arbeit mit Patienten als Krankenschwester haben Lücken aufgezeigt, die es zu füllen galt. Diese Erkenntnisse werden direkt in Apps umgesetzt.",
     "strength2Title": "Evidenzbasiertes Design",
     "strength2Body": "Unsere Bewertungsmethoden und statistischen Verfahren folgen klinischen und wissenschaftlichen Standards und gewährleisten die Genauigkeit, die du in der realen Praxis benötigst.",
     "strength3Title": "Freundliches Design für den Alltag",

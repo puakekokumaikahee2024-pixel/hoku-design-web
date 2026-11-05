@@ -2,7 +2,7 @@
   "meta": {
     "siteName": "HOKU Design",
     "siteTitle": "HOKU Design | 源自臨床經驗的應用程式",
-    "siteDescription": "HOKU Design 是由一位前護理師與一位物理治療師共同經營的雙人應用程式工作室，發布醫療保健、生活風格及遊戲類應用程式。"
+    "siteDescription": "HOKU Design 是由一位前護理師經營的應用程式工作室，發布醫療保健、生活風格及遊戲類應用程式。"
   },
   "nav": {
     "apps": "應用程式",
@@ -16,7 +16,7 @@
     "line2": "如繁星般",
     "line3": "緊緊",
     "line4": "相伴於您身旁。",
-    "lead": "HOKU Design 是由一位護理師與一位物理治療師共同創立的小型應用程式工作室。從幫助醫療專業人員的工具，到讓日常生活更美好的遊戲——每款應用程式都用心打造。",
+    "lead": "HOKU Design 是由一位前護理師經營的小型應用程式工作室。打造尚未存在的事物——從醫療到遊戲，每款應用程式都用心打造。",
     "cta": "查看應用程式",
     "ctaAbout": "關於 HOKU Design"
   },
@@ -45,18 +45,18 @@
   },
   "about": {
     "eyebrow": "關於我們",
-    "titlePart1": "護理師與",
-    "titlePart2": "物理治療師，",
-    "titlePart3": "攜手打造應用程式",
-    "lead": "HOKU Design 是一個雙人應用程式工作室，由前護理師擔任執行長，物理治療師負責開發。我們相信，結合護理與復健的雙重視角，能打造出真正適用於臨床環境的工具。",
+    "titlePart1": "打造",
+    "titlePart2": "尚未存在的事物。",
+    "titlePart3": "",
+    "lead": "HOKU Design 是由前護理師經營的應用程式工作室。以醫療從業者的視角與用心的設計，打造世界上尚未存在的應用程式。",
     "ceoRole": "執行長",
     "ceoTitle": "前護理師",
-    "ceoView": "護理視角",
+    "ceoView": "醫療從業者視角",
     "devRole": "開發者",
     "devTitle": "物理治療師",
     "devView": "復健視角",
-    "strength1Title": "來自實際工作的雙重視角",
-    "strength1Body": "我們都曾在護理與復健領域照護患者，因此能敏銳察覺真正缺乏的工具，並直接將這些洞察轉化為應用程式。",
+    "strength1Title": "醫療從業者的視角",
+    "strength1Body": "在護理現場照護患者的經驗，讓我們察覺到真正缺乏的工具，並直接將這些體悟轉化為應用程式。",
     "strength2Title": "實證為基礎的設計",
     "strength2Body": "我們的評估方法與統計技術遵循臨床及研究標準，確保在實際執業中所需的精準度。",
     "strength3Title": "親切的日常設計",
