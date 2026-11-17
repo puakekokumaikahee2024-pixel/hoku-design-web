@@ -140,8 +140,22 @@ export const apps: AppInfo[] = [
       "湾岸エリアで起きた連続殺人事件の謎を追う本格ミステリゲーム。",
     category: "game",
     platforms: ["iOS"],
-    status: "in-review",
+    version: "1.0",
+    status: "released",
+    storeUrl: "https://apps.apple.com/jp/app/%E6%B9%BE%E5%B2%B8%E9%80%A3%E7%B6%9A%E6%AE%BA%E4%BA%BA%E4%BA%8B%E4%BB%B6/id6803052647",
     iconSrc: "/icons/wangan.png",
+  },
+  {
+    id: "eiketsu-mahjong",
+    slug: "eiketsu-mahjong",
+    name: "英傑麻雀",
+    tagline: "三国志麻雀",
+    description:
+      "三国志の武将たちとCPU対戦できる本格四人打ち麻雀。歴史的英傑を相手に、頭脳戦を楽しもう。",
+    category: "game",
+    platforms: ["iOS"],
+    status: "in-review",
+    iconSrc: "/icons/eiketsu-mahjong.png",
   },
 ];
 
