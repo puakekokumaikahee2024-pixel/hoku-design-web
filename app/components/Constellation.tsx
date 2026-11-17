@@ -16,6 +16,7 @@ const POSITIONS: Record<string, { x: number; y: number }> = {
   waverun: { x: 72, y: 61 },
   mogrow: { x: 41, y: 79 },
   wangan: { x: 84, y: 85 },
+  "eiketsu-mahjong": { x: 62, y: 92 },
 };
 
 /** 星座の線（slug の組） */
@@ -29,6 +30,8 @@ const LINKS: [string, string][] = [
   ["waverun", "mogrow"],
   ["waverun", "wangan"],
   ["mogrow", "wangan"],
+  ["wangan", "eiketsu-mahjong"],
+  ["mogrow", "eiketsu-mahjong"],
 ];
 
 const GLOW: Record<AppCategory, string> = {
