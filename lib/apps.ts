@@ -154,7 +154,9 @@ export const apps: AppInfo[] = [
       "三国志の武将たちとCPU対戦できる本格四人打ち麻雀。歴史的英傑を相手に、頭脳戦を楽しもう。",
     category: "game",
     platforms: ["iOS"],
-    status: "in-review",
+    version: "1.0",
+    status: "released",
+    storeUrl: "https://apps.apple.com/jp/app/%E8%8B%B1%E5%82%91%E9%BA%BB%E9%9B%80/id6832997915",
     iconSrc: "/icons/eiketsu-mahjong.png",
   },
 ];
