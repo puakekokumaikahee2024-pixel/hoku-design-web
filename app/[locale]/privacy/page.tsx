@@ -78,25 +78,31 @@ export default async function PrivacyPage({ params }: Props) {
 
             <Section title="3. Information Obtained Through TikTok">
               <p>
-                <strong>Current status (as of November 2026):</strong> HOKU Ad Manager does not currently
-                connect to TikTok&rsquo;s API. We do not obtain any information directly from TikTok. Social media
-                account information displayed in the Service is entered manually by authorized users and is
-                not retrieved from TikTok or any other platform.
-              </p>
-              <p>
-                <strong>Planned future integration:</strong> We intend to implement TikTok API integration
-                in the future. When this is implemented, we expect to obtain the following categories of
-                information through TikTok&rsquo;s Login Kit and related APIs, subject to your authorization:
+                HOKU Ad Manager integrates with TikTok through TikTok&rsquo;s Login Kit and Display API. When an
+                authorized user connects a TikTok account and grants permission on TikTok&rsquo;s authorization
+                screen, we obtain only the following information, limited to the scopes the user approves:
               </p>
               <ul>
-                <li>Basic user profile information (such as display name and profile picture)</li>
-                <li>Public video information associated with the connected TikTok account</li>
+                <li><strong>Basic profile information</strong> (scope <code>user.info.basic</code>): the account&rsquo;s
+                open ID, display name, and avatar image.</li>
+                <li><strong>Public video information</strong> (scope <code>video.list</code>): for the connected
+                account&rsquo;s public videos, the video ID, title (caption), cover image URL, share URL, posting
+                time, and view, like, comment, and share counts.</li>
+                <li><strong>OAuth tokens:</strong> the access token and refresh token issued by TikTok, which allow
+                the Service to retrieve the information above on the user&rsquo;s behalf.</li>
               </ul>
               <p>
-                At that time, this Privacy Policy will be updated to describe how such information is
-                collected, used, stored, and deleted, and you will be notified before the changes take effect.
-                Any TikTok API integration will be implemented in accordance with TikTok&rsquo;s Platform Terms
-                and Developer Policies.
+                This information is used only to display the connected account and to show and analyze the
+                performance of that account&rsquo;s own posts (for example, totals, per-app results, and changes over
+                time) within the Service. Video information is refreshed automatically once a day and when an
+                authorized user requests an update. We do not post, edit, or delete content on TikTok, we do not
+                access private videos or direct messages, and we do not use TikTok data for advertising or sell it
+                to third parties.
+              </p>
+              <p>
+                OAuth tokens are stored only on our servers in a restricted database table that cannot be read from
+                the browser, and are used solely to call TikTok&rsquo;s API. Our use of TikTok data complies with
+                TikTok&rsquo;s Developer Terms of Service and Developer Guidelines.
               </p>
             </Section>
 
@@ -150,6 +156,13 @@ export default async function PrivacyPage({ params }: Props) {
                 If you wish to have your account or data deleted, please contact us using the contact
                 information in Section 14. We will process such requests in a reasonable time.
               </p>
+              <p>
+                <strong>TikTok data:</strong> You can revoke the Service&rsquo;s access at any time from the TikTok
+                app (Settings and privacy &rarr; Security and permissions &rarr; Apps and services permissions). After
+                access is revoked, the stored tokens can no longer be used and no further data is retrieved. On
+                request, we will delete the stored tokens and all video information obtained from TikTok within 30
+                days.
+              </p>
             </Section>
 
             <Section title="7. Sharing of Information">
@@ -183,6 +196,14 @@ export default async function PrivacyPage({ params }: Props) {
                   Privacy policy:{" "}
                   <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer" className="text-ocean hover:underline dark:text-turquoise">
                     anthropic.com/privacy
+                  </a>
+                </li>
+                <li>
+                  <strong>TikTok</strong> — Account connection (Login Kit) and retrieval of public video
+                  information (Display API) for connected accounts.
+                  Privacy policy:{" "}
+                  <a href="https://www.tiktok.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-ocean hover:underline dark:text-turquoise">
+                    tiktok.com/legal/privacy-policy
                   </a>
                 </li>
                 <li>
@@ -241,9 +262,8 @@ export default async function PrivacyPage({ params }: Props) {
             <Section title="13. Changes to This Policy">
               <p>
                 We may update this Privacy Policy from time to time. When we make material changes, we will
-                update the &ldquo;Last updated&rdquo; date at the top of this page. If we implement TikTok API
-                integration or other significant changes to our data practices, we will notify authorized
-                users before those changes take effect.
+                update the &ldquo;Last updated&rdquo; date at the top of this page. If we make significant changes
+                to our data practices, we will notify authorized users before those changes take effect.
               </p>
               <p>
                 We encourage you to review this policy periodically.

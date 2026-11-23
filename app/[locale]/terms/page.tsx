@@ -122,16 +122,18 @@ export default async function TermsPage({ params }: Props) {
 
             <Section title="7. TikTok API and Social Media Integration">
               <p>
-                <strong>Current status:</strong> As of the date of these Terms, the Service does not connect
-                directly to TikTok&rsquo;s API or any other social media API. Social media account information
-                entered in the Service is managed manually by authorized users for internal planning purposes only.
+                The Service connects to TikTok through TikTok&rsquo;s Login Kit and Display API. An authorized user
+                may connect a TikTok account that they own or are authorized to manage. With the user&rsquo;s
+                permission, the Service retrieves the account&rsquo;s basic profile information (display name and
+                avatar) and information about its public videos (such as title, cover image, link, posting time,
+                and view, like, comment, and share counts) in order to display and analyze the performance of that
+                account&rsquo;s posts within the Service.
               </p>
               <p>
-                <strong>Future integration:</strong> We plan to implement TikTok API integration (including
-                Login Kit and related features) in the future. When such integration is implemented, these
-                Terms and our Privacy Policy will be updated accordingly to reflect the data collected, how it
-                is used, and your rights with respect to that data. Users will be notified of material changes
-                before they take effect.
+                The Service does not post, edit, or delete content on TikTok. Users can revoke the Service&rsquo;s
+                access at any time from the TikTok app. Information obtained from TikTok is handled as described in
+                our Privacy Policy, and use of TikTok features is also subject to TikTok&rsquo;s own Terms of Service.
+                Other social media accounts are currently managed manually by authorized users.
               </p>
             </Section>
 
