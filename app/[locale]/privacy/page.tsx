@@ -64,8 +64,7 @@ export default async function PrivacyPage({ params }: Props) {
 
             <Section title="2. Information We Collect">
               <p>We collect the following categories of information:</p>
-              <p><strong>Account information:</strong> Email address and password used to authenticate with
-              the Service (managed via Supabase Auth).</p>
+              <p><strong>Account information:</strong> Email address and authentication information used to access the Service. Authentication is handled by Supabase Auth. HOKU Design does not have access to users&rsquo; passwords in plain text.</p>
               <p><strong>Content you provide:</strong> Social media account names and configuration settings
               you enter manually, advertising materials (video and image files) you upload, post captions and
               scheduling information you create within the Service, and performance metrics you enter manually.</p>
