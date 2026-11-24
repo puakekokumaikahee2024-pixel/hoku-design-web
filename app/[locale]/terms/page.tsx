@@ -46,7 +46,7 @@ export default async function TermsPage({ params }: Props) {
               Terms of Service
             </h1>
             <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-              Last updated: November 23, 2026
+              Last updated: November 24, 2026
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default async function TermsPage({ params }: Props) {
               </p>
             </Section>
 
-            <Section title="7. TikTok API and Social Media Integration">
+            <Section title="7. Social Media Platform Integrations (TikTok, Facebook, Instagram)">
               <p>
                 The Service connects to TikTok through TikTok&rsquo;s Login Kit and Display API. An authorized user
                 may connect a TikTok account that they own or are authorized to manage. With the user&rsquo;s
@@ -133,7 +133,21 @@ export default async function TermsPage({ params }: Props) {
                 The Service does not post, edit, or delete content on TikTok. Users can revoke the Service&rsquo;s
                 access at any time from the TikTok app. Information obtained from TikTok is handled as described in
                 our Privacy Policy, and use of TikTok features is also subject to TikTok&rsquo;s own Terms of Service.
-                Other social media accounts are currently managed manually by authorized users.
+              </p>
+              <p>
+                The Service also connects to Facebook Pages and Instagram professional accounts through Facebook
+                Login for Business and the Meta Graph API. With the user&rsquo;s permission, the Service retrieves
+                account information and post information (such as captions, links, posting times, and aggregate
+                view, like, comment, share, and save counts) to display and analyze performance, and publishes posts
+                to the connected Page or Instagram account only when an authorized user has scheduled the post,
+                approved it, and turned on automatic publishing for it. Users are responsible for the content they
+                approve for publishing. Users can revoke access at any time from their Facebook or Meta Business
+                Suite settings. Use of these features is also subject to Meta&rsquo;s Terms of Service and Platform
+                Terms.
+              </p>
+              <p>
+                Other social media accounts (such as X and YouTube) are currently managed manually by authorized
+                users.
               </p>
             </Section>
 

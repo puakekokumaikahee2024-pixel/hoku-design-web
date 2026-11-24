@@ -46,7 +46,7 @@ export default async function PrivacyPage({ params }: Props) {
               Privacy Policy
             </h1>
             <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-              Last updated: November 23, 2026
+              Last updated: November 24, 2026
             </p>
           </div>
 
@@ -76,7 +76,8 @@ export default async function PrivacyPage({ params }: Props) {
               </p>
             </Section>
 
-            <Section title="3. Information Obtained Through TikTok">
+            <Section title="3. Information Obtained Through Connected Social Media Accounts">
+              <p><strong>3.1 TikTok</strong></p>
               <p>
                 HOKU Ad Manager integrates with TikTok through TikTok&rsquo;s Login Kit and Display API. When an
                 authorized user connects a TikTok account and grants permission on TikTok&rsquo;s authorization
@@ -104,6 +105,42 @@ export default async function PrivacyPage({ params }: Props) {
                 the browser, and are used solely to call TikTok&rsquo;s API. Our use of TikTok data complies with
                 TikTok&rsquo;s Developer Terms of Service and Developer Guidelines.
               </p>
+              <p><strong>3.2 Facebook and Instagram (Meta)</strong></p>
+              <p>
+                HOKU Ad Manager integrates with Meta through Facebook Login for Business and the Meta Graph API
+                (Pages API and Instagram API). When an authorized user connects a Facebook Page and its linked
+                Instagram professional account and grants permission on Meta&rsquo;s authorization screen, we obtain
+                only the following information, limited to the permissions the user approves:
+              </p>
+              <ul>
+                <li><strong>Account information:</strong> the Facebook Page ID and name, and the linked Instagram
+                account ID, username, and profile image.</li>
+                <li><strong>Post information:</strong> for posts published by the connected Page and Instagram
+                account, the post ID, caption, permalink, thumbnail or image URL, posting time, and aggregate
+                counts such as views, reactions or likes, comments, shares, and saves.</li>
+                <li><strong>Access tokens:</strong> the access token issued by Meta, which allows the Service to
+                perform the actions described here on the user&rsquo;s behalf.</li>
+              </ul>
+              <p>
+                This information is used only to display the connected accounts and to show and analyze the
+                performance of their own posts within the Service. Post information is refreshed automatically once
+                a day and when an authorized user requests an update.
+              </p>
+              <p>
+                <strong>Publishing:</strong> when an authorized user schedules a post, approves it, and turns on
+                automatic publishing for that post, the Service publishes the selected advertising material (video
+                or image) and caption to the connected Facebook Page or Instagram account at the scheduled time. To
+                do this, the Service gives Meta a temporary link to the material that expires after six hours. The
+                Service does not publish anything that has not been approved and set for automatic publishing by an
+                authorized user, and it does not edit or delete existing posts.
+              </p>
+              <p>
+                We do not access personal Facebook profiles, private messages, or the personal information of
+                people who interact with the posts (we use aggregate counts only), and we do not use Meta data for
+                advertising or sell it to third parties. Access tokens are stored only on our servers in a restricted
+                database table that cannot be read from the browser. Our use of Meta data complies with the Meta
+                Platform Terms and Developer Policies.
+              </p>
             </Section>
 
             <Section title="4. How We Use Information">
@@ -114,6 +151,8 @@ export default async function PrivacyPage({ params }: Props) {
                 <li>Store and retrieve advertising materials and post plans</li>
                 <li>Generate AI-assisted captions via the Claude API (Anthropic) based on inputs you provide</li>
                 <li>Display post history and performance metrics within the Service</li>
+                <li>Publish posts that an authorized user has scheduled, approved, and set for automatic publishing to connected Facebook Pages and Instagram accounts</li>
+                <li>Generate AI-assisted analysis of aggregated performance metrics via the Claude API (Anthropic)</li>
               </ul>
               <p>
                 We do not use your information for advertising purposes, and we do not sell your information
@@ -163,6 +202,14 @@ export default async function PrivacyPage({ params }: Props) {
                 request, we will delete the stored tokens and all video information obtained from TikTok within 30
                 days.
               </p>
+              <p>
+                <strong>Facebook and Instagram data:</strong> You can revoke the Service&rsquo;s access at any time
+                from Facebook (Settings &amp; privacy &rarr; Settings &rarr; Business integrations) or from the
+                Meta Business Suite settings for your Page and Instagram account. After access is revoked, the
+                stored token can no longer be used and no further data is retrieved or published. On request, we
+                will delete the stored token and all post information obtained from Meta within 30 days. Posts
+                already published to Facebook or Instagram remain on those platforms and can be deleted there.
+              </p>
             </Section>
 
             <Section title="7. Sharing of Information">
@@ -193,6 +240,8 @@ export default async function PrivacyPage({ params }: Props) {
                 <li>
                   <strong>Anthropic (Claude API)</strong> — AI-assisted caption generation.
                   Your inputs (app name, topic, tone) are sent to Anthropic&rsquo;s API to generate captions.
+                  For AI analysis, aggregated metrics and the first part of post captions are sent; access tokens
+                  are never sent.
                   Privacy policy:{" "}
                   <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer" className="text-ocean hover:underline dark:text-turquoise">
                     anthropic.com/privacy
@@ -204,6 +253,15 @@ export default async function PrivacyPage({ params }: Props) {
                   Privacy policy:{" "}
                   <a href="https://www.tiktok.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-ocean hover:underline dark:text-turquoise">
                     tiktok.com/legal/privacy-policy
+                  </a>
+                </li>
+                <li>
+                  <strong>Meta (Facebook and Instagram)</strong> — Account connection (Facebook Login for
+                  Business), retrieval of post information and aggregate metrics, and publishing of approved
+                  scheduled posts (Graph API) for connected accounts.
+                  Privacy policy:{" "}
+                  <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-ocean hover:underline dark:text-turquoise">
+                    facebook.com/privacy/policy
                   </a>
                 </li>
                 <li>
