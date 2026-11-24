@@ -141,6 +141,30 @@ export default async function PrivacyPage({ params }: Props) {
                 database table that cannot be read from the browser. Our use of Meta data complies with the Meta
                 Platform Terms and Developer Policies.
               </p>
+              <p><strong>3.3 X (formerly Twitter)</strong></p>
+              <p>
+                HOKU Ad Manager integrates with X through OAuth 2.0 and the X API v2 with read-only permissions
+                (scopes <code>tweet.read</code>, <code>users.read</code>, and <code>offline.access</code>). When an
+                authorized user connects an X account and grants permission on X&rsquo;s authorization screen, we
+                obtain only the following information:
+              </p>
+              <ul>
+                <li><strong>Account information:</strong> the account&rsquo;s user ID, username, and profile image.</li>
+                <li><strong>Post information:</strong> for the connected account&rsquo;s own posts (excluding reposts
+                and replies), the post ID, text, link, attached media preview image URL, posting time, and aggregate
+                counts such as impressions, likes, replies, reposts, quotes, and bookmarks.</li>
+                <li><strong>OAuth tokens:</strong> the access token and refresh token issued by X, which allow the
+                Service to retrieve the information above on the user&rsquo;s behalf.</li>
+              </ul>
+              <p>
+                This information is used only to display the connected account and to show and analyze the
+                performance of its own posts within the Service. Post information is refreshed automatically every
+                two days and when an authorized user requests an update. The Service does not post, edit, or delete
+                content on X, does not read direct messages, does not collect information about other users, and does
+                not use X data for advertising or sell it to third parties. Tokens are stored only on our servers in a
+                restricted database table that cannot be read from the browser. Our use of X data complies with the X
+                Developer Agreement and Developer Policy.
+              </p>
             </Section>
 
             <Section title="4. How We Use Information">
@@ -151,6 +175,7 @@ export default async function PrivacyPage({ params }: Props) {
                 <li>Store and retrieve advertising materials and post plans</li>
                 <li>Generate AI-assisted captions via the Claude API (Anthropic) based on inputs you provide</li>
                 <li>Display post history and performance metrics within the Service</li>
+                <li>Retrieve read-only post information and aggregate metrics from connected X accounts</li>
                 <li>Publish posts that an authorized user has scheduled, approved, and set for automatic publishing to connected Facebook Pages and Instagram accounts</li>
                 <li>Generate AI-assisted analysis of aggregated performance metrics via the Claude API (Anthropic)</li>
               </ul>
@@ -210,6 +235,12 @@ export default async function PrivacyPage({ params }: Props) {
                 will delete the stored token and all post information obtained from Meta within 30 days. Posts
                 already published to Facebook or Instagram remain on those platforms and can be deleted there.
               </p>
+              <p>
+                <strong>X data:</strong> You can revoke the Service&rsquo;s access at any time from X (Settings and
+                privacy &rarr; Security and account access &rarr; Apps and sessions &rarr; Connected apps). After access is
+                revoked, the stored tokens can no longer be used and no further data is retrieved. On request, we will
+                delete the stored tokens and all post information obtained from X within 30 days.
+              </p>
             </Section>
 
             <Section title="7. Sharing of Information">
@@ -262,6 +293,14 @@ export default async function PrivacyPage({ params }: Props) {
                   Privacy policy:{" "}
                   <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-ocean hover:underline dark:text-turquoise">
                     facebook.com/privacy/policy
+                  </a>
+                </li>
+                <li>
+                  <strong>X</strong> — Read-only account connection (OAuth 2.0) and retrieval of the connected
+                  account&rsquo;s own post information and aggregate metrics (X API v2).
+                  Privacy policy:{" "}
+                  <a href="https://x.com/en/privacy" target="_blank" rel="noopener noreferrer" className="text-ocean hover:underline dark:text-turquoise">
+                    x.com/en/privacy
                   </a>
                 </li>
                 <li>

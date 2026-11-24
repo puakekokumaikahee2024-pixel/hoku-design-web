@@ -120,7 +120,7 @@ export default async function TermsPage({ params }: Props) {
               </p>
             </Section>
 
-            <Section title="7. Social Media Platform Integrations (TikTok, Facebook, Instagram)">
+            <Section title="7. Social Media Platform Integrations (TikTok, Facebook, Instagram, X)">
               <p>
                 The Service connects to TikTok through TikTok&rsquo;s Login Kit and Display API. An authorized user
                 may connect a TikTok account that they own or are authorized to manage. With the user&rsquo;s
@@ -146,8 +146,15 @@ export default async function TermsPage({ params }: Props) {
                 Terms.
               </p>
               <p>
-                Other social media accounts (such as X and YouTube) are currently managed manually by authorized
-                users.
+                The Service also connects to X accounts through OAuth 2.0 with read-only permissions. With the
+                user&rsquo;s permission, the Service retrieves account information and the account&rsquo;s own post
+                information (such as text, links, posting times, and aggregate impression, like, reply, repost, and
+                bookmark counts) to display and analyze performance. The Service does not post, edit, or delete content
+                on X. Users can revoke access at any time from their X settings. Use of these features is also subject
+                to X&rsquo;s Terms of Service and Developer Agreement.
+              </p>
+              <p>
+                Other social media accounts (such as YouTube) are currently managed manually by authorized users.
               </p>
             </Section>
 
